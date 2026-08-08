@@ -1,0 +1,4294 @@
+{
+  "version": "2.15",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": -448,
+      "y": -30,
+      "name": "TeamHub Recruitment Dashboard",
+      "clip": true,
+      "width": 1320,
+      "height": 968,
+      "fill": "$bg",
+      "cornerRadius": 18,
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "S1c58N",
+          "x": 20,
+          "y": 24,
+          "name": "Sidebar",
+          "width": 220,
+          "height": 920,
+          "fill": "$surface",
+          "layout": "none",
+          "children": [
+            {
+              "type": "icon",
+              "id": "cGfSh",
+              "x": 18,
+              "y": 28,
+              "name": "TeamHub Mark",
+              "width": 26,
+              "height": 26,
+              "icon": "blend",
+              "library": "lucide",
+              "fill": "$teal"
+            },
+            {
+              "type": "text",
+              "id": "eYJZP",
+              "x": 50,
+              "y": 33,
+              "name": "TeamHub Logo",
+              "fill": "$deep",
+              "content": "TeamHub",
+              "fontFamily": "$font",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "icon",
+              "id": "ooj0s",
+              "x": 29,
+              "y": 92,
+              "name": "Dashboard Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "grid-2x2",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "K5nE6o",
+              "x": 55,
+              "y": 93,
+              "name": "Dashboard Navigation",
+              "fill": "#55645F",
+              "content": "Dashboard",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "fVCk4",
+              "x": 29,
+              "y": 139,
+              "name": "Inbox Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "mail",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "m1dny",
+              "x": 55,
+              "y": 140,
+              "name": "Inbox Navigation",
+              "fill": "#55645F",
+              "content": "Inbox",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "y4mUzI",
+              "x": 29,
+              "y": 186,
+              "name": "Calendar Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "calendar-days",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "Eu9dY",
+              "x": 55,
+              "y": 187,
+              "name": "Calendar Navigation",
+              "fill": "#55645F",
+              "content": "Calendar",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "Bup9q",
+              "x": 29,
+              "y": 233,
+              "name": "Employees Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "contact",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "ymxPY",
+              "x": 55,
+              "y": 234,
+              "name": "Employees Navigation",
+              "fill": "#55645F",
+              "content": "Employees",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "qc2tG",
+              "x": 29,
+              "y": 280,
+              "name": "Attendance Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "user-check",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "lGKNB",
+              "x": 55,
+              "y": 281,
+              "name": "Attendance Navigation",
+              "fill": "#55645F",
+              "content": "Attendance",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "p4DpR",
+              "x": 29,
+              "y": 327,
+              "name": "Performance Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "chart-no-axes-combined",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "xdbLM",
+              "x": 55,
+              "y": 328,
+              "name": "Performance Navigation",
+              "fill": "#55645F",
+              "content": "Performance",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "o0cOxM",
+              "x": 29,
+              "y": 374,
+              "name": "Payroll Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "receipt-text",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "rf67y",
+              "x": 55,
+              "y": 375,
+              "name": "Payroll Navigation",
+              "fill": "#55645F",
+              "content": "Payroll",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "icon",
+              "id": "RGi7R",
+              "x": 29,
+              "y": 421,
+              "name": "Leave Management Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "calendar-x",
+              "library": "lucide",
+              "fill": "#62716D"
+            },
+            {
+              "type": "text",
+              "id": "U0F9hf",
+              "x": 55,
+              "y": 422,
+              "name": "Leave Management Navigation",
+              "fill": "#55645F",
+              "content": "Leave Management",
+              "fontFamily": "$font",
+              "fontSize": 13
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 12,
+              "id": "xzVhO",
+              "x": 14,
+              "y": 458,
+              "name": "Recruitment Active Background",
+              "fill": "$teal",
+              "width": 190,
+              "height": 40
+            },
+            {
+              "type": "icon",
+              "id": "K1EXkX",
+              "x": 29,
+              "y": 468,
+              "name": "Recruitment Icon",
+              "width": 17,
+              "height": 17,
+              "icon": "search",
+              "library": "lucide",
+              "fill": "#FFFFFF"
+            },
+            {
+              "type": "text",
+              "id": "uuuIK",
+              "x": 55,
+              "y": 469,
+              "name": "Recruitment Navigation",
+              "fill": "#FFFFFF",
+              "content": "Recruitment",
+              "fontFamily": "$font",
+              "fontSize": 13,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "I7h7go",
+              "x": 14,
+              "y": 726,
+              "name": "Upgrade Promo",
+              "width": 190,
+              "height": 192,
+              "fill": "$lime",
+              "cornerRadius": 18,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "JjEHx",
+                  "x": 18,
+                  "y": 22,
+                  "name": "Promo Title",
+                  "fill": "$deep",
+                  "content": "Level Up Your HR\nSystem",
+                  "lineHeight": 1.25,
+                  "fontFamily": "$font",
+                  "fontSize": 17,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "a0gIs",
+                  "x": 18,
+                  "y": 78,
+                  "name": "Promo Description",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 152,
+                  "content": "TeamHub Pro gives you full control with advanced modules and extended layouts",
+                  "lineHeight": 1.35,
+                  "fontFamily": "$font",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 10,
+                  "id": "zAC7c",
+                  "x": 16,
+                  "y": 138,
+                  "name": "Promo Button",
+                  "fill": "$teal",
+                  "width": 158,
+                  "height": 40
+                },
+                {
+                  "type": "text",
+                  "id": "yGwPZ",
+                  "x": 37,
+                  "y": 150,
+                  "name": "Promo Button Label",
+                  "fill": "#FFFFFF",
+                  "content": "Get TeamHub Pro",
+                  "fontFamily": "$font",
+                  "fontSize": 13,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "MdaYF",
+          "x": 240,
+          "y": 24,
+          "name": "Dashboard Content",
+          "width": 1060,
+          "height": 920,
+          "fill": "#F8F9F8",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "BfCBT",
+              "x": 22,
+              "y": 22,
+              "name": "Page Title",
+              "fill": "$ink",
+              "content": "Recruitment",
+              "fontFamily": "$font",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "xl0A0",
+              "x": 22,
+              "y": 47,
+              "name": "Breadcrumb",
+              "fill": "$muted",
+              "content": "Dashboard  /  Recruitment",
+              "fontFamily": "$font",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "ive6p",
+              "x": 562,
+              "y": 22,
+              "name": "Global Search",
+              "width": 260,
+              "height": 38,
+              "fill": "#FFFFFF",
+              "cornerRadius": 11,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "MC7Mv",
+                  "x": 13,
+                  "y": 11,
+                  "name": "Search Icon",
+                  "width": 17,
+                  "height": 17,
+                  "icon": "search",
+                  "library": "lucide",
+                  "fill": "$ink"
+                },
+                {
+                  "type": "text",
+                  "id": "mADbT",
+                  "x": 39,
+                  "y": 12,
+                  "name": "Search Placeholder",
+                  "fill": "$muted",
+                  "content": "Search anything",
+                  "fontFamily": "$font",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "TqlH3",
+              "x": 832,
+              "y": 22,
+              "name": "Settings Button",
+              "fill": "#ECF7DF",
+              "width": 36,
+              "height": 38
+            },
+            {
+              "type": "icon",
+              "id": "K1JTW",
+              "x": 842,
+              "y": 32,
+              "name": "Settings Icon",
+              "width": 16,
+              "height": 16,
+              "icon": "settings",
+              "library": "lucide",
+              "fill": "$ink"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "jNZBj",
+              "x": 877,
+              "y": 22,
+              "name": "Notification Button",
+              "fill": "#E7F3D6",
+              "width": 36,
+              "height": 38
+            },
+            {
+              "type": "icon",
+              "id": "U4rJD",
+              "x": 887,
+              "y": 32,
+              "name": "Notification Icon",
+              "width": 16,
+              "height": 16,
+              "icon": "bell",
+              "library": "lucide",
+              "fill": "$ink"
+            },
+            {
+              "type": "ellipse",
+              "id": "PsafT",
+              "x": 928,
+              "y": 22,
+              "name": "User Avatar",
+              "fill": "$teal",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "type": "text",
+              "id": "m6xCC",
+              "x": 938,
+              "y": 33,
+              "name": "User Initials",
+              "fill": "#FFFFFF",
+              "content": "DL",
+              "fontFamily": "$font",
+              "fontSize": 12,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "LqR1L",
+              "x": 974,
+              "y": 23,
+              "name": "User Name",
+              "fill": "$ink",
+              "content": "Davis Levin",
+              "fontFamily": "$font",
+              "fontSize": 14,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "ncKwS",
+              "x": 974,
+              "y": 44,
+              "name": "User Role",
+              "fill": "$muted",
+              "content": "User",
+              "fontFamily": "$font",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "dc8i5",
+              "x": 22,
+              "y": 80,
+              "name": "Total Applicants Card",
+              "width": 175,
+              "height": 168,
+              "fill": "$lime",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "snVaT",
+                  "x": 14,
+                  "y": 14,
+                  "name": "Applicants Icon Background",
+                  "fill": "$deep",
+                  "width": 48,
+                  "height": 48
+                },
+                {
+                  "type": "icon",
+                  "id": "Ap11G",
+                  "x": 28,
+                  "y": 28,
+                  "name": "Applicants Document Icon",
+                  "width": 20,
+                  "height": 20,
+                  "icon": "file-text",
+                  "library": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "q08dp",
+                  "x": 14,
+                  "y": 94,
+                  "name": "Applicants Total",
+                  "fill": "$ink",
+                  "content": "146",
+                  "fontFamily": "$font",
+                  "fontSize": 36,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 9,
+                  "id": "QJcRl",
+                  "x": 77,
+                  "y": 97,
+                  "name": "Change Pill",
+                  "fill": "$teal",
+                  "width": 42,
+                  "height": 18
+                },
+                {
+                  "type": "text",
+                  "id": "qzclp",
+                  "x": 82,
+                  "y": 99,
+                  "name": "Applicants Change",
+                  "fill": "#FFFFFF",
+                  "content": "+8.2%",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "T0YsM",
+                  "x": 14,
+                  "y": 144,
+                  "name": "Applicants Caption",
+                  "fill": "$muted",
+                  "content": "Total Applicants",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "oEf96",
+                  "x": 82,
+                  "y": 119,
+                  "name": "Applicants Comparison",
+                  "fill": "$muted",
+                  "content": "vs last month",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "l57YXt",
+              "x": 215,
+              "y": 80,
+              "name": "Interviews Card",
+              "width": 240,
+              "height": 76,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "cdaLo",
+                  "x": 14,
+                  "y": 14,
+                  "name": "Interviewed Icon Background",
+                  "fill": "#F7FAF9",
+                  "width": 48,
+                  "height": 48
+                },
+                {
+                  "type": "icon",
+                  "id": "ohwWL",
+                  "x": 27,
+                  "y": 27,
+                  "name": "Interviewed Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "messages-square",
+                  "library": "lucide",
+                  "fill": "$teal"
+                },
+                {
+                  "type": "text",
+                  "id": "u1kOTC",
+                  "x": 76,
+                  "y": 17,
+                  "name": "Interviewed Label",
+                  "fill": "$muted",
+                  "content": "Interviewed",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "IRiQP",
+                  "x": 76,
+                  "y": 35,
+                  "name": "Interviewed Value",
+                  "fill": "$ink",
+                  "content": "42",
+                  "fontFamily": "$font",
+                  "fontSize": 27,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "Ax8dl",
+                  "x": 194,
+                  "y": 28,
+                  "name": "Interviewed Percent",
+                  "fill": "$deep",
+                  "content": "28.8%",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "TzVAV",
+                  "x": 177,
+                  "y": 51,
+                  "name": "Interviewed Note",
+                  "fill": "$muted",
+                  "content": "of applicants",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Fg3YP",
+              "x": 215,
+              "y": 172,
+              "name": "Hired Card",
+              "width": 240,
+              "height": 76,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "vDZvq",
+                  "x": 14,
+                  "y": 14,
+                  "name": "Hired Icon Background",
+                  "fill": "#F7FAF9",
+                  "width": 48,
+                  "height": 48
+                },
+                {
+                  "type": "icon",
+                  "id": "acsmo",
+                  "x": 27,
+                  "y": 27,
+                  "name": "Hired Icon",
+                  "width": 22,
+                  "height": 22,
+                  "icon": "user-round-check",
+                  "library": "lucide",
+                  "fill": "$teal"
+                },
+                {
+                  "type": "text",
+                  "id": "QLGeH",
+                  "x": 76,
+                  "y": 17,
+                  "name": "Hired Label",
+                  "fill": "$muted",
+                  "content": "Hired",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "dSya0",
+                  "x": 76,
+                  "y": 35,
+                  "name": "Hired Value",
+                  "fill": "$ink",
+                  "content": "12",
+                  "fontFamily": "$font",
+                  "fontSize": 27,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "VqFeC",
+                  "x": 194,
+                  "y": 28,
+                  "name": "Hired Percent",
+                  "fill": "$deep",
+                  "content": "8.2%",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "Txg0e",
+                  "x": 177,
+                  "y": 51,
+                  "name": "Hired Note",
+                  "fill": "$muted",
+                  "content": "of applicants",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "t3KsO",
+              "x": 473,
+              "y": 80,
+              "name": "Application Chart",
+              "width": 310,
+              "height": 196,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "y2zoj",
+                  "x": 14,
+                  "y": 16,
+                  "name": "Application Chart Title",
+                  "fill": "$ink",
+                  "content": "Application",
+                  "fontFamily": "$font",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 9,
+                  "id": "N9ctkA",
+                  "x": 188,
+                  "y": 14,
+                  "name": "Chart Range Filter",
+                  "fill": "$lime",
+                  "width": 108,
+                  "height": 32
+                },
+                {
+                  "type": "text",
+                  "id": "aRjWD",
+                  "x": 202,
+                  "y": 24,
+                  "name": "Chart Range Label",
+                  "fill": "$ink",
+                  "content": "Last 6 Months⌄",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "rectangle",
+                  "id": "BvjqO",
+                  "x": 38,
+                  "y": 64,
+                  "name": "Application Grid 0",
+                  "fill": "#EDF0EF",
+                  "width": 252,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "JW0sW",
+                  "x": 9,
+                  "y": 59,
+                  "name": "Application Axis 0",
+                  "fill": "$muted",
+                  "content": "200",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "id": "f5wlZU",
+                  "x": 38,
+                  "y": 93,
+                  "name": "Application Grid 1",
+                  "fill": "#EDF0EF",
+                  "width": 252,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "cuuPi",
+                  "x": 9,
+                  "y": 88,
+                  "name": "Application Axis 1",
+                  "fill": "$muted",
+                  "content": "150",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "id": "UBgJH",
+                  "x": 38,
+                  "y": 122,
+                  "name": "Application Grid 2",
+                  "fill": "#EDF0EF",
+                  "width": 252,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "z74mY",
+                  "x": 9,
+                  "y": 117,
+                  "name": "Application Axis 2",
+                  "fill": "$muted",
+                  "content": "100",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "id": "i2Kcn",
+                  "x": 38,
+                  "y": 151,
+                  "name": "Application Grid 3",
+                  "fill": "#EDF0EF",
+                  "width": 252,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "jjNDl",
+                  "x": 9,
+                  "y": 146,
+                  "name": "Application Axis 3",
+                  "fill": "$muted",
+                  "content": "50",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "path",
+                  "id": "k1wtQY",
+                  "x": 39,
+                  "y": 73,
+                  "name": "Application Area",
+                  "geometry": "M0 46l42 9 42-3 42-31 42-6 42 23 38-11 0 55-248 0z",
+                  "viewBox": [
+                    0,
+                    0,
+                    248,
+                    82
+                  ],
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 180,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#36BEA655",
+                        "position": 0
+                      },
+                      {
+                        "color": "#36BEA600",
+                        "position": 1
+                      }
+                    ]
+                  },
+                  "width": 248,
+                  "height": 82
+                },
+                {
+                  "type": "path",
+                  "id": "c59nd",
+                  "x": 39,
+                  "y": 73,
+                  "name": "Application Line",
+                  "geometry": "M0 46l42 9 42-3 42-31 42-6 42 23 38-11",
+                  "viewBox": [
+                    0,
+                    0,
+                    248,
+                    56
+                  ],
+                  "fill": "#00000000",
+                  "width": 248,
+                  "height": 56,
+                  "stroke": "$teal",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "text",
+                  "id": "lcvd9",
+                  "x": 48,
+                  "y": 170,
+                  "name": "Month 0",
+                  "fill": "$muted",
+                  "content": "Jan",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "text",
+                  "id": "rN52T",
+                  "x": 90,
+                  "y": 170,
+                  "name": "Month 1",
+                  "fill": "$muted",
+                  "content": "Feb",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "text",
+                  "id": "G6TXk",
+                  "x": 132,
+                  "y": 170,
+                  "name": "Month 2",
+                  "fill": "$muted",
+                  "content": "Mar",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "text",
+                  "id": "S8BrF",
+                  "x": 174,
+                  "y": 170,
+                  "name": "Month 3",
+                  "fill": "$muted",
+                  "content": "Apr",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "text",
+                  "id": "EejBD",
+                  "x": 216,
+                  "y": 170,
+                  "name": "Month 4",
+                  "fill": "$muted",
+                  "content": "May",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "text",
+                  "id": "SWJjY",
+                  "x": 258,
+                  "y": 170,
+                  "name": "Month 5",
+                  "fill": "$muted",
+                  "content": "Jun",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "H3rDnZ",
+              "x": 22,
+              "y": 266,
+              "name": "Current Vacancies",
+              "width": 435,
+              "height": 222,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qNz7X",
+                  "x": 14,
+                  "y": 16,
+                  "name": "Vacancies Title",
+                  "fill": "$ink",
+                  "content": "Current Vacancies",
+                  "fontFamily": "$font",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 9,
+                  "id": "r2CJ4",
+                  "x": 332,
+                  "y": 13,
+                  "name": "Vacancy Filter",
+                  "fill": "$lime",
+                  "width": 88,
+                  "height": 32
+                },
+                {
+                  "type": "icon",
+                  "id": "T8myP",
+                  "x": 346,
+                  "y": 22,
+                  "name": "Vacancy Filter Icon",
+                  "width": 14,
+                  "height": 14,
+                  "icon": "list-filter",
+                  "library": "lucide",
+                  "fill": "$ink"
+                },
+                {
+                  "type": "text",
+                  "id": "XdFYh",
+                  "x": 366,
+                  "y": 23,
+                  "name": "Vacancy Filter Label",
+                  "fill": "$ink",
+                  "content": "Filter⌄",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "qceIZ",
+                  "x": 14,
+                  "y": 58,
+                  "name": "UI Designer Vacancy",
+                  "width": 201,
+                  "height": 68,
+                  "fill": "#F7F8F7",
+                  "cornerRadius": 10,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GAxGJ",
+                      "x": 14,
+                      "y": 13,
+                      "name": "UI Designer Title",
+                      "fill": "$deep",
+                      "content": "UI Designer",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "dhezC",
+                      "x": 14,
+                      "y": 40,
+                      "name": "UI Designer Job Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "briefcase-business",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "s73PB",
+                      "x": 30,
+                      "y": 40,
+                      "name": "UI Designer Type",
+                      "fill": "$muted",
+                      "content": "Full-Time",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "mR4IY",
+                      "x": 92,
+                      "y": 40,
+                      "name": "UI Designer Location Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "monitor",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "BczMa",
+                      "x": 108,
+                      "y": 40,
+                      "name": "UI Designer Mode",
+                      "fill": "$muted",
+                      "content": "Remote",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "bGCa7",
+                      "x": 158,
+                      "y": 40,
+                      "name": "UI Designer Count Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "users-round",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "f2z358",
+                      "x": 174,
+                      "y": 40,
+                      "name": "UI Designer Count",
+                      "fill": "$muted",
+                      "content": "18",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NPvLP",
+                  "x": 230,
+                  "y": 58,
+                  "name": "Sales Manager Vacancy",
+                  "width": 201,
+                  "height": 68,
+                  "fill": "#F7F8F7",
+                  "cornerRadius": 10,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ogodn",
+                      "x": 14,
+                      "y": 13,
+                      "name": "Sales Manager Title",
+                      "fill": "$deep",
+                      "content": "Sales Manager",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "LeCls",
+                      "x": 14,
+                      "y": 40,
+                      "name": "Sales Manager Job Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "briefcase-business",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G6YNH",
+                      "x": 30,
+                      "y": 40,
+                      "name": "Sales Manager Type",
+                      "fill": "$muted",
+                      "content": "Full-Time",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "x8hU7",
+                      "x": 92,
+                      "y": 40,
+                      "name": "Sales Manager Location Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "monitor",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pGHTq",
+                      "x": 108,
+                      "y": 40,
+                      "name": "Sales Manager Mode",
+                      "fill": "$muted",
+                      "content": "On-Site",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "vGtPu",
+                      "x": 158,
+                      "y": 40,
+                      "name": "Sales Manager Count Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "users-round",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ec9T1",
+                      "x": 174,
+                      "y": 40,
+                      "name": "Sales Manager Count",
+                      "fill": "$muted",
+                      "content": "15",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vq5aD",
+                  "x": 14,
+                  "y": 142,
+                  "name": "HR Assistant Vacancy",
+                  "width": 201,
+                  "height": 68,
+                  "fill": "#F7F8F7",
+                  "cornerRadius": 10,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Pb3TC",
+                      "x": 14,
+                      "y": 13,
+                      "name": "HR Assistant Title",
+                      "fill": "$deep",
+                      "content": "HR Assistant",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "ZW5uo",
+                      "x": 14,
+                      "y": 40,
+                      "name": "HR Assistant Job Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "briefcase-business",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "qigvs",
+                      "x": 30,
+                      "y": 40,
+                      "name": "HR Assistant Type",
+                      "fill": "$muted",
+                      "content": "Internship",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "ZsrtC",
+                      "x": 92,
+                      "y": 40,
+                      "name": "HR Assistant Location Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "monitor",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kuUJy",
+                      "x": 108,
+                      "y": 40,
+                      "name": "HR Assistant Mode",
+                      "fill": "$muted",
+                      "content": "On-Site",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "ogyRH",
+                      "x": 158,
+                      "y": 40,
+                      "name": "HR Assistant Count Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "users-round",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "d2kNU",
+                      "x": 174,
+                      "y": 40,
+                      "name": "HR Assistant Count",
+                      "fill": "$muted",
+                      "content": "10",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Y1P4BK",
+                  "x": 230,
+                  "y": 142,
+                  "name": "Data Analyst Vacancy",
+                  "width": 201,
+                  "height": 68,
+                  "fill": "#F7F8F7",
+                  "cornerRadius": 10,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Dyi8d",
+                      "x": 14,
+                      "y": 13,
+                      "name": "Data Analyst Title",
+                      "fill": "$deep",
+                      "content": "Data Analyst",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "icon",
+                      "id": "v1mKhu",
+                      "x": 14,
+                      "y": 40,
+                      "name": "Data Analyst Job Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "briefcase-business",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bXCXm",
+                      "x": 30,
+                      "y": 40,
+                      "name": "Data Analyst Type",
+                      "fill": "$muted",
+                      "content": "Full-Time",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "E71HN",
+                      "x": 92,
+                      "y": 40,
+                      "name": "Data Analyst Location Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "monitor",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "NysZz",
+                      "x": 108,
+                      "y": 40,
+                      "name": "Data Analyst Mode",
+                      "fill": "$muted",
+                      "content": "Hybrid",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "icon",
+                      "id": "k3z1sM",
+                      "x": 158,
+                      "y": 40,
+                      "name": "Data Analyst Count Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "users-round",
+                      "library": "lucide",
+                      "fill": "$muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "u1WJH6",
+                      "x": 174,
+                      "y": 40,
+                      "name": "Data Analyst Count",
+                      "fill": "$muted",
+                      "content": "22",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "B7p9UH",
+              "x": 473,
+              "y": 294,
+              "name": "Applications by Department",
+              "width": 310,
+              "height": 194,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "s7UqGe",
+                  "x": 14,
+                  "y": 16,
+                  "name": "Department Title",
+                  "fill": "$ink",
+                  "content": "Application by Department",
+                  "fontFamily": "$font",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "egqrH",
+                  "x": 274,
+                  "y": 15,
+                  "name": "Department Menu",
+                  "fill": "$ink",
+                  "content": "⋯",
+                  "fontFamily": "$font",
+                  "fontSize": 18,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "oyAhD",
+                  "x": 22,
+                  "y": 118.19999999999999,
+                  "name": "Human\nResources Bar",
+                  "fill": "$teal",
+                  "width": 33,
+                  "height": 41.800000000000004
+                },
+                {
+                  "type": "text",
+                  "id": "GxG3Q",
+                  "x": 32,
+                  "y": 109.19999999999999,
+                  "name": "Human\nResources Value",
+                  "fill": "$muted",
+                  "content": "19",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "sOiMb",
+                  "x": 18,
+                  "y": 166,
+                  "name": "Human\nResources Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "Human\nResources",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "BwbJU",
+                  "x": 69,
+                  "y": 100.6,
+                  "name": "Marketing Bar",
+                  "fill": "$teal",
+                  "width": 33,
+                  "height": 59.400000000000006
+                },
+                {
+                  "type": "text",
+                  "id": "SHf2X",
+                  "x": 79,
+                  "y": 91.6,
+                  "name": "Marketing Value",
+                  "fill": "$muted",
+                  "content": "27",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "wmFM4",
+                  "x": 65,
+                  "y": 166,
+                  "name": "Marketing Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "Marketing",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "S8ymyH",
+                  "x": 116,
+                  "y": 91.8,
+                  "name": "Product\nDesign Bar",
+                  "fill": "$teal",
+                  "width": 33,
+                  "height": 68.2
+                },
+                {
+                  "type": "text",
+                  "id": "BNk5T",
+                  "x": 126,
+                  "y": 82.8,
+                  "name": "Product\nDesign Value",
+                  "fill": "$muted",
+                  "content": "31",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "O1jOei",
+                  "x": 112,
+                  "y": 166,
+                  "name": "Product\nDesign Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "Product\nDesign",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "D8Xih",
+                  "x": 163,
+                  "y": 111.6,
+                  "name": "R&D Bar",
+                  "fill": "$teal",
+                  "width": 33,
+                  "height": 48.400000000000006
+                },
+                {
+                  "type": "text",
+                  "id": "DpVr9",
+                  "x": 173,
+                  "y": 102.6,
+                  "name": "R&D Value",
+                  "fill": "$muted",
+                  "content": "22",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "H3AEGO",
+                  "x": 159,
+                  "y": 166,
+                  "name": "R&D Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "R&D",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "WtScF",
+                  "x": 210,
+                  "y": 98.39999999999999,
+                  "name": "Operations Bar",
+                  "fill": "$deep",
+                  "width": 33,
+                  "height": 61.60000000000001
+                },
+                {
+                  "type": "text",
+                  "id": "dxu0Q",
+                  "x": 220,
+                  "y": 89.39999999999999,
+                  "name": "Operations Value",
+                  "fill": "$muted",
+                  "content": "28",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "GPZFO",
+                  "x": 206,
+                  "y": 166,
+                  "name": "Operations Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "Operations",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": [
+                    6,
+                    6,
+                    0,
+                    0
+                  ],
+                  "id": "RUyvr",
+                  "x": 257,
+                  "y": 118.19999999999999,
+                  "name": "Customer\nService Bar",
+                  "fill": "$teal",
+                  "width": 33,
+                  "height": 41.800000000000004
+                },
+                {
+                  "type": "text",
+                  "id": "FLUDA",
+                  "x": 267,
+                  "y": 109.19999999999999,
+                  "name": "Customer\nService Value",
+                  "fill": "$muted",
+                  "content": "19",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "JKDUr",
+                  "x": 253,
+                  "y": 166,
+                  "name": "Customer\nService Label",
+                  "fill": "$muted",
+                  "textGrowth": "fixed-width",
+                  "width": 42,
+                  "content": "Customer\nService",
+                  "lineHeight": 1.05,
+                  "textAlign": "center",
+                  "fontFamily": "$font",
+                  "fontSize": 7,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RROLQ",
+              "x": 801,
+              "y": 80,
+              "name": "Applicant Resources",
+              "width": 239,
+              "height": 252,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WwqgV",
+                  "x": 14,
+                  "y": 16,
+                  "name": "Resources Title",
+                  "fill": "$ink",
+                  "content": "Applicant Resources",
+                  "fontFamily": "$font",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "o9QdT",
+                  "x": 207,
+                  "y": 13,
+                  "name": "Resources Menu",
+                  "fill": "$ink",
+                  "content": "⋯",
+                  "fontFamily": "$font",
+                  "fontSize": 18,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "S7ROu",
+                  "x": 14,
+                  "y": 57,
+                  "name": "Job Portal Source",
+                  "fill": "$muted",
+                  "content": "Job Portal",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "h3ZDJH",
+                  "x": 170,
+                  "y": 57,
+                  "name": "Job Portal Stat",
+                  "fill": "$muted",
+                  "content": "57.5% | 84",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "k8pjdD",
+                  "x": 14,
+                  "y": 75,
+                  "name": "Job Portal Track",
+                  "fill": "#E5E8E7",
+                  "width": 211,
+                  "height": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "rREKi",
+                  "x": 14,
+                  "y": 75,
+                  "name": "Job Portal Progress",
+                  "fill": "$deep",
+                  "width": 164.58,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "zzOMz",
+                  "x": 14,
+                  "y": 99,
+                  "name": "Company Website Source",
+                  "fill": "$muted",
+                  "content": "Company Website",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "dV7TL",
+                  "x": 170,
+                  "y": 99,
+                  "name": "Company Website Stat",
+                  "fill": "$muted",
+                  "content": "20.5% | 30",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "xYLGt",
+                  "x": 14,
+                  "y": 117,
+                  "name": "Company Website Track",
+                  "fill": "#E5E8E7",
+                  "width": 211,
+                  "height": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "SBbsB",
+                  "x": 14,
+                  "y": 117,
+                  "name": "Company Website Progress",
+                  "fill": "$teal",
+                  "width": 67.52,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "KAhou",
+                  "x": 14,
+                  "y": 141,
+                  "name": "Employee Referral Source",
+                  "fill": "$muted",
+                  "content": "Employee Referral",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "zldes",
+                  "x": 170,
+                  "y": 141,
+                  "name": "Employee Referral Stat",
+                  "fill": "$muted",
+                  "content": "15.1% | 22",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "u7CRb",
+                  "x": 14,
+                  "y": 159,
+                  "name": "Employee Referral Track",
+                  "fill": "#E5E8E7",
+                  "width": 211,
+                  "height": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "Qejkn",
+                  "x": 14,
+                  "y": 159,
+                  "name": "Employee Referral Progress",
+                  "fill": "$teal",
+                  "width": 46.42,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "J6wmKd",
+                  "x": 14,
+                  "y": 183,
+                  "name": "Social Media (LinkedIn) Source",
+                  "fill": "$muted",
+                  "content": "Social Media (LinkedIn)",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "wSxtQ",
+                  "x": 170,
+                  "y": 183,
+                  "name": "Social Media (LinkedIn) Stat",
+                  "fill": "$muted",
+                  "content": "6.9% | 10",
+                  "fontFamily": "$font",
+                  "fontSize": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "MN9LE",
+                  "x": 14,
+                  "y": 201,
+                  "name": "Social Media (LinkedIn) Track",
+                  "fill": "#E5E8E7",
+                  "width": 211,
+                  "height": 9
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "gc6zq",
+                  "x": 14,
+                  "y": 201,
+                  "name": "Social Media (LinkedIn) Progress",
+                  "fill": "$teal",
+                  "width": 23.21,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "S38qM",
+                  "x": 14,
+                  "y": 230,
+                  "name": "Resource Axis 0",
+                  "fill": "$muted",
+                  "content": "0",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "gf79L",
+                  "x": 66,
+                  "y": 230,
+                  "name": "Resource Axis 1",
+                  "fill": "$muted",
+                  "content": "25",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "KhhIi",
+                  "x": 118,
+                  "y": 230,
+                  "name": "Resource Axis 2",
+                  "fill": "$muted",
+                  "content": "50",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "pVwHp",
+                  "x": 170,
+                  "y": 230,
+                  "name": "Resource Axis 3",
+                  "fill": "$muted",
+                  "content": "75",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                },
+                {
+                  "type": "text",
+                  "id": "osNL0",
+                  "x": 213,
+                  "y": 230,
+                  "name": "Resource Axis 4",
+                  "fill": "$muted",
+                  "content": "100",
+                  "fontFamily": "$font",
+                  "fontSize": 8
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K90CR",
+              "x": 801,
+              "y": 350,
+              "name": "Schedules",
+              "width": 239,
+              "height": 530,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "klky5",
+                  "x": 14,
+                  "y": 16,
+                  "name": "Schedules Title",
+                  "fill": "$ink",
+                  "content": "Schedules",
+                  "fontFamily": "$font",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "z02EPC",
+                  "x": 207,
+                  "y": 14,
+                  "name": "Schedules Menu",
+                  "fill": "$ink",
+                  "content": "⋯",
+                  "fontFamily": "$font",
+                  "fontSize": 18,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "tSHq7",
+                  "x": 14,
+                  "y": 58,
+                  "name": "June Calendar",
+                  "width": 211,
+                  "height": 97,
+                  "fill": "#F7F8F7",
+                  "cornerRadius": 10,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "k98lhU",
+                      "x": 10,
+                      "y": 10,
+                      "name": "Calendar Previous",
+                      "fill": "#FFFFFF",
+                      "width": 28,
+                      "height": 28
+                    },
+                    {
+                      "type": "icon",
+                      "id": "mh5dB",
+                      "x": 18,
+                      "y": 18,
+                      "name": "Calendar Previous Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-left",
+                      "library": "lucide",
+                      "fill": "$ink"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "w3N2OA",
+                      "x": 173,
+                      "y": 10,
+                      "name": "Calendar Next",
+                      "fill": "#FFFFFF",
+                      "width": 28,
+                      "height": 28
+                    },
+                    {
+                      "type": "icon",
+                      "id": "IaesF",
+                      "x": 181,
+                      "y": 18,
+                      "name": "Calendar Next Icon",
+                      "width": 12,
+                      "height": 12,
+                      "icon": "chevron-right",
+                      "library": "lucide",
+                      "fill": "$ink"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r0t2t",
+                      "x": 79,
+                      "y": 18,
+                      "name": "Calendar Month",
+                      "fill": "$ink",
+                      "content": "June 2035",
+                      "fontFamily": "$font",
+                      "fontSize": 11,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "L9sy2R",
+                      "x": 14,
+                      "y": 51,
+                      "name": "Weekday 0",
+                      "fill": "$muted",
+                      "content": "S",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "Igy5O",
+                      "x": 14,
+                      "y": 70,
+                      "name": "Date 0",
+                      "fill": "$ink",
+                      "content": "17",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "text",
+                      "id": "w11DJW",
+                      "x": 42,
+                      "y": 51,
+                      "name": "Weekday 1",
+                      "fill": "$muted",
+                      "content": "M",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "rtxOO",
+                      "x": 42,
+                      "y": 70,
+                      "name": "Date 1",
+                      "fill": "$ink",
+                      "content": "18",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "text",
+                      "id": "W6X3pm",
+                      "x": 70,
+                      "y": 51,
+                      "name": "Weekday 2",
+                      "fill": "$muted",
+                      "content": "T",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "xaXHG",
+                      "x": 70,
+                      "y": 70,
+                      "name": "Date 2",
+                      "fill": "$ink",
+                      "content": "19",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "text",
+                      "id": "DJqpb",
+                      "x": 98,
+                      "y": 51,
+                      "name": "Weekday 3",
+                      "fill": "$muted",
+                      "content": "W",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "x6H9EM",
+                      "x": 88,
+                      "y": 47,
+                      "name": "Selected Date",
+                      "fill": "$teal",
+                      "width": 28,
+                      "height": 40
+                    },
+                    {
+                      "type": "text",
+                      "id": "IbHp3",
+                      "x": 98,
+                      "y": 70,
+                      "name": "Date 3",
+                      "fill": "#FFFFFF",
+                      "content": "20",
+                      "fontFamily": "$font",
+                      "fontSize": 10,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UBQvK",
+                      "x": 126,
+                      "y": 51,
+                      "name": "Weekday 4",
+                      "fill": "$muted",
+                      "content": "T",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "obmth",
+                      "x": 126,
+                      "y": 70,
+                      "name": "Date 4",
+                      "fill": "$ink",
+                      "content": "21",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "text",
+                      "id": "aYsFS",
+                      "x": 154,
+                      "y": 51,
+                      "name": "Weekday 5",
+                      "fill": "$muted",
+                      "content": "F",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "IoPRw",
+                      "x": 154,
+                      "y": 70,
+                      "name": "Date 5",
+                      "fill": "$ink",
+                      "content": "22",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    },
+                    {
+                      "type": "text",
+                      "id": "hWBsG",
+                      "x": 182,
+                      "y": 51,
+                      "name": "Weekday 6",
+                      "fill": "$muted",
+                      "content": "S",
+                      "fontFamily": "$font",
+                      "fontSize": 8
+                    },
+                    {
+                      "type": "text",
+                      "id": "D6lg9I",
+                      "x": 182,
+                      "y": 70,
+                      "name": "Date 6",
+                      "fill": "$ink",
+                      "content": "23",
+                      "fontFamily": "$font",
+                      "fontSize": 10
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "KcCDR",
+                  "x": 13,
+                  "y": 186,
+                  "name": "Event Dot 0",
+                  "fill": "$teal",
+                  "width": 9,
+                  "height": 9,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "rectangle",
+                  "id": "ADiTh",
+                  "x": 17,
+                  "y": 188,
+                  "name": "Schedule Timeline",
+                  "fill": "#CFE5DF",
+                  "width": 1,
+                  "height": 272
+                },
+                {
+                  "type": "frame",
+                  "id": "TgKAB",
+                  "x": 32,
+                  "y": 174,
+                  "name": "Online Test Review Event",
+                  "width": 193,
+                  "height": 64,
+                  "fill": "$lime",
+                  "cornerRadius": 11,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "kTtVk",
+                      "x": 12,
+                      "y": 10,
+                      "name": "Online Test Review Time",
+                      "fill": "$muted",
+                      "content": "09:45 AM",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "text",
+                      "id": "ocJfe",
+                      "x": 12,
+                      "y": 27,
+                      "name": "Online Test Review Name",
+                      "fill": "$ink",
+                      "content": "Online Test Review",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "vLlwq",
+                      "x": 12,
+                      "y": 45,
+                      "name": "Online Test Review Detail",
+                      "fill": "$muted",
+                      "content": "Lala Wijaya • Data Analyst",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "pL6Qt",
+                  "x": 13,
+                  "y": 264,
+                  "name": "Event Dot 1",
+                  "fill": "$teal",
+                  "width": 9,
+                  "height": 9,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "Tx6zK",
+                  "x": 32,
+                  "y": 252,
+                  "name": "First Interview Event",
+                  "width": 193,
+                  "height": 64,
+                  "fill": "$lime",
+                  "cornerRadius": 11,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bCAWC",
+                      "x": 12,
+                      "y": 10,
+                      "name": "First Interview Time",
+                      "fill": "$muted",
+                      "content": "01:00 PM",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "text",
+                      "id": "GZPWR",
+                      "x": 12,
+                      "y": 27,
+                      "name": "First Interview Name",
+                      "fill": "$ink",
+                      "content": "First Interview",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CkxvJ",
+                      "x": 12,
+                      "y": 45,
+                      "name": "First Interview Detail",
+                      "fill": "$muted",
+                      "content": "William Hartono • UI Designer",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "QO2Sl",
+                  "x": 13,
+                  "y": 342,
+                  "name": "Event Dot 2",
+                  "fill": "$teal",
+                  "width": 9,
+                  "height": 9,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "QOPUR",
+                  "x": 32,
+                  "y": 330,
+                  "name": "HR Interview Event",
+                  "width": 193,
+                  "height": 64,
+                  "fill": "$lime",
+                  "cornerRadius": 11,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "sAOs4",
+                      "x": 12,
+                      "y": 10,
+                      "name": "HR Interview Time",
+                      "fill": "$muted",
+                      "content": "02:30 PM",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "text",
+                      "id": "n54Od",
+                      "x": 12,
+                      "y": 27,
+                      "name": "HR Interview Name",
+                      "fill": "$ink",
+                      "content": "HR Interview",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Y6oHn",
+                      "x": 12,
+                      "y": 45,
+                      "name": "HR Interview Detail",
+                      "fill": "$muted",
+                      "content": "Arifin Maulana • Customer Support",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                },
+                {
+                  "type": "ellipse",
+                  "id": "dmnCe",
+                  "x": 13,
+                  "y": 420,
+                  "name": "Event Dot 3",
+                  "fill": "$teal",
+                  "width": 9,
+                  "height": 9,
+                  "stroke": "#FFFFFF",
+                  "strokeWidth": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "V3nND6",
+                  "x": 32,
+                  "y": 408,
+                  "name": "Final Interview Event",
+                  "width": 193,
+                  "height": 64,
+                  "fill": "$lime",
+                  "cornerRadius": 11,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "t367Gt",
+                      "x": 12,
+                      "y": 10,
+                      "name": "Final Interview Time",
+                      "fill": "$muted",
+                      "content": "03:10 PM",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    },
+                    {
+                      "type": "text",
+                      "id": "vfq4S",
+                      "x": 12,
+                      "y": 27,
+                      "name": "Final Interview Name",
+                      "fill": "$ink",
+                      "content": "Final Interview",
+                      "fontFamily": "$font",
+                      "fontSize": 12,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "udwXH",
+                      "x": 12,
+                      "y": 45,
+                      "name": "Final Interview Detail",
+                      "fill": "$muted",
+                      "content": "Fanny Rizal • Sales Manager",
+                      "fontFamily": "$font",
+                      "fontSize": 9
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oPEz0",
+              "x": 22,
+              "y": 506,
+              "name": "Applicants Table",
+              "width": 761,
+              "height": 374,
+              "fill": "#FFFFFF",
+              "cornerRadius": 14,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gOATU",
+                  "x": 14,
+                  "y": 17,
+                  "name": "Applicants Title",
+                  "fill": "$ink",
+                  "content": "Applicants",
+                  "fontFamily": "$font",
+                  "fontSize": 15,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 8,
+                  "id": "EAo8D",
+                  "x": 268,
+                  "y": 14,
+                  "name": "Active Applicants Tab",
+                  "fill": "$teal",
+                  "width": 34,
+                  "height": 28
+                },
+                {
+                  "type": "text",
+                  "id": "H6wNj",
+                  "x": 278,
+                  "y": 23,
+                  "name": "All Tab",
+                  "fill": "#FFFFFF",
+                  "content": "All",
+                  "fontFamily": "$font",
+                  "fontSize": 10,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "text",
+                  "id": "Y59qSN",
+                  "x": 314,
+                  "y": 23,
+                  "name": "Application Received Tab",
+                  "fill": "$muted",
+                  "content": "Application Received",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "LugA3",
+                  "x": 442,
+                  "y": 23,
+                  "name": "Interview Scheduled Tab",
+                  "fill": "$muted",
+                  "content": "Interview Scheduled",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "An8FL",
+                  "x": 569,
+                  "y": 23,
+                  "name": "Final Interview Tab",
+                  "fill": "$muted",
+                  "content": "Final Interview",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "text",
+                  "id": "aDsAy",
+                  "x": 654,
+                  "y": 23,
+                  "name": "Test Completed Tab",
+                  "fill": "$muted",
+                  "content": "Test Completed",
+                  "fontFamily": "$font",
+                  "fontSize": 10
+                },
+                {
+                  "type": "frame",
+                  "id": "bZCGF",
+                  "x": 14,
+                  "y": 58,
+                  "name": "Applicants Data Table",
+                  "width": 733,
+                  "height": 297,
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O5oynH",
+                      "name": "Applicants Header Row",
+                      "width": "fill_container",
+                      "height": 36,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "bv6IR",
+                          "name": "Name ↕ Header Cell",
+                          "width": 198,
+                          "height": "fill_container",
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "l4Nxm",
+                              "name": "Name ↕ Header",
+                              "fill": "$muted",
+                              "content": "Name ↕",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "WBAyQ",
+                          "name": "Job Title ↕ Header Cell",
+                          "width": 144,
+                          "height": "fill_container",
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YAKKw",
+                              "name": "Job Title ↕ Header",
+                              "fill": "$muted",
+                              "content": "Job Title ↕",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "i5nff2",
+                          "name": "Applied Date ↕ Header Cell",
+                          "width": 112,
+                          "height": "fill_container",
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fSyL8",
+                              "name": "Applied Date ↕ Header",
+                              "fill": "$muted",
+                              "content": "Applied Date ↕",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "w5gjr1",
+                          "name": "Application Received ↕ Header Cell",
+                          "width": 149,
+                          "height": "fill_container",
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "gTkba",
+                              "name": "Application Received ↕ Header",
+                              "fill": "$muted",
+                              "content": "Application Received ↕",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "qEmoy",
+                          "name": "Status (Stage) ↕ Header Cell",
+                          "width": 130,
+                          "height": "fill_container",
+                          "padding": [
+                            0,
+                            8
+                          ],
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "t3av8V",
+                              "name": "Status (Stage) ↕ Header",
+                              "fill": "$muted",
+                              "content": "Status (Stage) ↕",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jHM6p",
+                      "name": "William Hartono Applicant Row",
+                      "width": "fill_container",
+                      "height": 52,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "ulDUj",
+                          "name": "William Hartono Cell 0",
+                          "width": 198,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "qqSkf",
+                              "x": 8,
+                              "y": 12,
+                              "name": "William Hartono Avatar",
+                              "fill": "$teal",
+                              "width": 28,
+                              "height": 28
+                            },
+                            {
+                              "type": "text",
+                              "id": "Y6u1M9",
+                              "x": 15,
+                              "y": 20,
+                              "name": "William Hartono Initials",
+                              "fill": "#FFFFFF",
+                              "content": "WH",
+                              "fontFamily": "$font",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "GhsYK",
+                              "x": 44,
+                              "y": 11,
+                              "name": "William Hartono Name",
+                              "fill": "$ink",
+                              "content": "William Hartono",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ECgxF",
+                              "x": 44,
+                              "y": 29,
+                              "name": "William Hartono Email",
+                              "fill": "$muted",
+                              "content": "william.hartono@email.com",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lGwLg",
+                          "name": "William Hartono Cell 1",
+                          "width": 144,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "I3JKyx",
+                              "x": 8,
+                              "y": 11,
+                              "name": "William Hartono Job",
+                              "fill": "$ink",
+                              "content": "UI Designer",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "XjqlE",
+                              "x": 8,
+                              "y": 29,
+                              "name": "William Hartono Department",
+                              "fill": "$muted",
+                              "content": "Product Design",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I4xiAi",
+                          "name": "William Hartono Cell 2",
+                          "width": 112,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "b8CYFA",
+                              "x": 8,
+                              "y": 19,
+                              "name": "William Hartono Applied",
+                              "fill": "$ink",
+                              "content": "15 Jun 2035",
+                              "fontFamily": "$font",
+                              "fontSize": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FXJoY",
+                          "name": "William Hartono Cell 3",
+                          "width": 149,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AVN4d",
+                              "x": 8,
+                              "y": 19,
+                              "name": "William Hartono Type",
+                              "fill": "$ink",
+                              "content": "Full-Time   Remote",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xm4X0",
+                          "name": "William Hartono Cell 4",
+                          "width": 130,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "z59A1J",
+                              "x": 8,
+                              "y": 8,
+                              "name": "William Hartono Stage",
+                              "fill": "$ink",
+                              "content": "Interview Scheduled",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "WOLk1",
+                              "x": 8,
+                              "y": 28,
+                              "name": "William Hartono Stage 1",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "u5WyH",
+                              "x": 14,
+                              "y": 30,
+                              "name": "William Hartono Stage Number 1",
+                              "fill": "$deep",
+                              "content": "1",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "jdMME",
+                              "x": 28,
+                              "y": 28,
+                              "name": "William Hartono Stage 2",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "TXvmq",
+                              "x": 34,
+                              "y": 30,
+                              "name": "William Hartono Stage Number 2",
+                              "fill": "$deep",
+                              "content": "2",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "G4CqIt",
+                              "x": 48,
+                              "y": 28,
+                              "name": "William Hartono Stage 3",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "A4miX",
+                              "x": 54,
+                              "y": 30,
+                              "name": "William Hartono Stage Number 3",
+                              "fill": "$deep",
+                              "content": "3",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "bkgQV",
+                              "x": 68,
+                              "y": 28,
+                              "name": "William Hartono Stage 4",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "AC5Za",
+                              "x": 74,
+                              "y": 30,
+                              "name": "William Hartono Stage Number 4",
+                              "fill": "$deep",
+                              "content": "4",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "bDT30",
+                              "x": 88,
+                              "y": 28,
+                              "name": "William Hartono Stage 5",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "FZr50",
+                              "x": 94,
+                              "y": 30,
+                              "name": "William Hartono Stage Number 5",
+                              "fill": "#A9B0AE",
+                              "content": "5",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "JOvFs",
+                      "name": "Fanny Rizal Applicant Row",
+                      "width": "fill_container",
+                      "height": 52,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "i7EDHc",
+                          "name": "Fanny Rizal Cell 0",
+                          "width": 198,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "m9Pac",
+                              "x": 8,
+                              "y": 12,
+                              "name": "Fanny Rizal Avatar",
+                              "fill": "$deep",
+                              "width": 28,
+                              "height": 28
+                            },
+                            {
+                              "type": "text",
+                              "id": "lxH27",
+                              "x": 15,
+                              "y": 20,
+                              "name": "Fanny Rizal Initials",
+                              "fill": "#FFFFFF",
+                              "content": "FR",
+                              "fontFamily": "$font",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "sXqso",
+                              "x": 44,
+                              "y": 11,
+                              "name": "Fanny Rizal Name",
+                              "fill": "$ink",
+                              "content": "Fanny Rizal",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "y9VAoy",
+                              "x": 44,
+                              "y": 29,
+                              "name": "Fanny Rizal Email",
+                              "fill": "$muted",
+                              "content": "fanny.rizal@email.com",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QYdpf",
+                          "name": "Fanny Rizal Cell 1",
+                          "width": 144,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "O5rJy",
+                              "x": 8,
+                              "y": 11,
+                              "name": "Fanny Rizal Job",
+                              "fill": "$ink",
+                              "content": "Sales Manager",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "meMtW",
+                              "x": 8,
+                              "y": 29,
+                              "name": "Fanny Rizal Department",
+                              "fill": "$muted",
+                              "content": "Operations",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n6Hvs",
+                          "name": "Fanny Rizal Cell 2",
+                          "width": 112,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JFp7w",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Fanny Rizal Applied",
+                              "fill": "$ink",
+                              "content": "12 Jun 2035",
+                              "fontFamily": "$font",
+                              "fontSize": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "CBGiF",
+                          "name": "Fanny Rizal Cell 3",
+                          "width": 149,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NN9Mf",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Fanny Rizal Type",
+                              "fill": "$ink",
+                              "content": "Full-Time   On-Site",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "AaLYD",
+                          "name": "Fanny Rizal Cell 4",
+                          "width": 130,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "u3y52g",
+                              "x": 8,
+                              "y": 8,
+                              "name": "Fanny Rizal Stage",
+                              "fill": "$ink",
+                              "content": "Final Interview",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "pSv0S",
+                              "x": 8,
+                              "y": 28,
+                              "name": "Fanny Rizal Stage 1",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "UYJtD",
+                              "x": 14,
+                              "y": 30,
+                              "name": "Fanny Rizal Stage Number 1",
+                              "fill": "$deep",
+                              "content": "1",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "j8rPHj",
+                              "x": 28,
+                              "y": 28,
+                              "name": "Fanny Rizal Stage 2",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "i9qgC",
+                              "x": 34,
+                              "y": 30,
+                              "name": "Fanny Rizal Stage Number 2",
+                              "fill": "$deep",
+                              "content": "2",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "hlglR",
+                              "x": 48,
+                              "y": 28,
+                              "name": "Fanny Rizal Stage 3",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "RNKRp",
+                              "x": 54,
+                              "y": 30,
+                              "name": "Fanny Rizal Stage Number 3",
+                              "fill": "$deep",
+                              "content": "3",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "TxuCT",
+                              "x": 68,
+                              "y": 28,
+                              "name": "Fanny Rizal Stage 4",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "w3CSP",
+                              "x": 74,
+                              "y": 30,
+                              "name": "Fanny Rizal Stage Number 4",
+                              "fill": "$deep",
+                              "content": "4",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "ZwZg9",
+                              "x": 88,
+                              "y": 28,
+                              "name": "Fanny Rizal Stage 5",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "IJBEo",
+                              "x": 94,
+                              "y": 30,
+                              "name": "Fanny Rizal Stage Number 5",
+                              "fill": "#A9B0AE",
+                              "content": "5",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ou0AD",
+                      "name": "Lala Wijaya Applicant Row",
+                      "width": "fill_container",
+                      "height": 52,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "R7gfR7",
+                          "name": "Lala Wijaya Cell 0",
+                          "width": 198,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "QxLSN",
+                              "x": 8,
+                              "y": 12,
+                              "name": "Lala Wijaya Avatar",
+                              "fill": "$teal",
+                              "width": 28,
+                              "height": 28
+                            },
+                            {
+                              "type": "text",
+                              "id": "G1nKlh",
+                              "x": 15,
+                              "y": 20,
+                              "name": "Lala Wijaya Initials",
+                              "fill": "#FFFFFF",
+                              "content": "LW",
+                              "fontFamily": "$font",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Tiare",
+                              "x": 44,
+                              "y": 11,
+                              "name": "Lala Wijaya Name",
+                              "fill": "$ink",
+                              "content": "Lala Wijaya",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "S566y",
+                              "x": 44,
+                              "y": 29,
+                              "name": "Lala Wijaya Email",
+                              "fill": "$muted",
+                              "content": "lala.wijaya@email.com",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "GbxKZ",
+                          "name": "Lala Wijaya Cell 1",
+                          "width": 144,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "wz8wh",
+                              "x": 8,
+                              "y": 11,
+                              "name": "Lala Wijaya Job",
+                              "fill": "$ink",
+                              "content": "Data Analyst",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "k9ggMP",
+                              "x": 8,
+                              "y": 29,
+                              "name": "Lala Wijaya Department",
+                              "fill": "$muted",
+                              "content": "R&D",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QZrwq",
+                          "name": "Lala Wijaya Cell 2",
+                          "width": 112,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "uOgaD",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Lala Wijaya Applied",
+                              "fill": "$ink",
+                              "content": "14 Jun 2035",
+                              "fontFamily": "$font",
+                              "fontSize": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "LuSVt",
+                          "name": "Lala Wijaya Cell 3",
+                          "width": 149,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "a0ogrK",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Lala Wijaya Type",
+                              "fill": "$ink",
+                              "content": "Full-Time   Hybrid",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "J632mc",
+                          "name": "Lala Wijaya Cell 4",
+                          "width": 130,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "xzgib",
+                              "x": 8,
+                              "y": 8,
+                              "name": "Lala Wijaya Stage",
+                              "fill": "$ink",
+                              "content": "Test Completed",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "Z5wNIL",
+                              "x": 8,
+                              "y": 28,
+                              "name": "Lala Wijaya Stage 1",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "J12hu",
+                              "x": 14,
+                              "y": 30,
+                              "name": "Lala Wijaya Stage Number 1",
+                              "fill": "$deep",
+                              "content": "1",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "UmygR",
+                              "x": 28,
+                              "y": 28,
+                              "name": "Lala Wijaya Stage 2",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "lTtrR",
+                              "x": 34,
+                              "y": 30,
+                              "name": "Lala Wijaya Stage Number 2",
+                              "fill": "$deep",
+                              "content": "2",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "IrFVb",
+                              "x": 48,
+                              "y": 28,
+                              "name": "Lala Wijaya Stage 3",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "IM0Qc",
+                              "x": 54,
+                              "y": 30,
+                              "name": "Lala Wijaya Stage Number 3",
+                              "fill": "#A9B0AE",
+                              "content": "3",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "o9dDFZ",
+                              "x": 68,
+                              "y": 28,
+                              "name": "Lala Wijaya Stage 4",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "MYWv8",
+                              "x": 74,
+                              "y": 30,
+                              "name": "Lala Wijaya Stage Number 4",
+                              "fill": "#A9B0AE",
+                              "content": "4",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "LAWMB",
+                              "x": 88,
+                              "y": 28,
+                              "name": "Lala Wijaya Stage 5",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "lU2qE",
+                              "x": 94,
+                              "y": 30,
+                              "name": "Lala Wijaya Stage Number 5",
+                              "fill": "#A9B0AE",
+                              "content": "5",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZErjm",
+                      "name": "Arifin Maulana Applicant Row",
+                      "width": "fill_container",
+                      "height": 52,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "tfjA9",
+                          "name": "Arifin Maulana Cell 0",
+                          "width": 198,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "TOMxi",
+                              "x": 8,
+                              "y": 12,
+                              "name": "Arifin Maulana Avatar",
+                              "fill": "$deep",
+                              "width": 28,
+                              "height": 28
+                            },
+                            {
+                              "type": "text",
+                              "id": "sx6kB",
+                              "x": 15,
+                              "y": 20,
+                              "name": "Arifin Maulana Initials",
+                              "fill": "#FFFFFF",
+                              "content": "AM",
+                              "fontFamily": "$font",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "oXPmi",
+                              "x": 44,
+                              "y": 11,
+                              "name": "Arifin Maulana Name",
+                              "fill": "$ink",
+                              "content": "Arifin Maulana",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "t1MvrJ",
+                              "x": 44,
+                              "y": 29,
+                              "name": "Arifin Maulana Email",
+                              "fill": "$muted",
+                              "content": "arifin.maulana@email.com",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "a0G7J",
+                          "name": "Arifin Maulana Cell 1",
+                          "width": 144,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NrT6s",
+                              "x": 8,
+                              "y": 11,
+                              "name": "Arifin Maulana Job",
+                              "fill": "$ink",
+                              "content": "Customer Support",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "PFVzP",
+                              "x": 8,
+                              "y": 29,
+                              "name": "Arifin Maulana Department",
+                              "fill": "$muted",
+                              "content": "Customer Service",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "JAeuk",
+                          "name": "Arifin Maulana Cell 2",
+                          "width": 112,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Lsywr",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Arifin Maulana Applied",
+                              "fill": "$ink",
+                              "content": "13 Jun 2035",
+                              "fontFamily": "$font",
+                              "fontSize": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "scn9h",
+                          "name": "Arifin Maulana Cell 3",
+                          "width": 149,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "w9iikY",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Arifin Maulana Type",
+                              "fill": "$ink",
+                              "content": "Full-Time   On-Site",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "h5tL3",
+                          "name": "Arifin Maulana Cell 4",
+                          "width": 130,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "KCgIo",
+                              "x": 8,
+                              "y": 8,
+                              "name": "Arifin Maulana Stage",
+                              "fill": "$ink",
+                              "content": "Interview Scheduled",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "xnKpE",
+                              "x": 8,
+                              "y": 28,
+                              "name": "Arifin Maulana Stage 1",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "ROPh5",
+                              "x": 14,
+                              "y": 30,
+                              "name": "Arifin Maulana Stage Number 1",
+                              "fill": "$deep",
+                              "content": "1",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "N1rlQ",
+                              "x": 28,
+                              "y": 28,
+                              "name": "Arifin Maulana Stage 2",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "PKYPd",
+                              "x": 34,
+                              "y": 30,
+                              "name": "Arifin Maulana Stage Number 2",
+                              "fill": "$deep",
+                              "content": "2",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "FIIAa",
+                              "x": 48,
+                              "y": 28,
+                              "name": "Arifin Maulana Stage 3",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "M12i8L",
+                              "x": 54,
+                              "y": 30,
+                              "name": "Arifin Maulana Stage Number 3",
+                              "fill": "$deep",
+                              "content": "3",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "IPvxV",
+                              "x": 68,
+                              "y": 28,
+                              "name": "Arifin Maulana Stage 4",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "Qne53",
+                              "x": 74,
+                              "y": 30,
+                              "name": "Arifin Maulana Stage Number 4",
+                              "fill": "$deep",
+                              "content": "4",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "OLK9G",
+                              "x": 88,
+                              "y": 28,
+                              "name": "Arifin Maulana Stage 5",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "cJX5E",
+                              "x": 94,
+                              "y": 30,
+                              "name": "Arifin Maulana Stage Number 5",
+                              "fill": "#A9B0AE",
+                              "content": "5",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lybhQ",
+                      "name": "Clara Mentari Applicant Row",
+                      "width": "fill_container",
+                      "height": 52,
+                      "stroke": "$line",
+                      "strokeWidth": {
+                        "bottom": 1
+                      },
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Yrv8s",
+                          "name": "Clara Mentari Cell 0",
+                          "width": 198,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "ellipse",
+                              "id": "HA96m",
+                              "x": 8,
+                              "y": 12,
+                              "name": "Clara Mentari Avatar",
+                              "fill": "$teal",
+                              "width": 28,
+                              "height": 28
+                            },
+                            {
+                              "type": "text",
+                              "id": "P301dy",
+                              "x": 15,
+                              "y": 20,
+                              "name": "Clara Mentari Initials",
+                              "fill": "#FFFFFF",
+                              "content": "CM",
+                              "fontFamily": "$font",
+                              "fontSize": 8,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "KRMzc",
+                              "x": 44,
+                              "y": 11,
+                              "name": "Clara Mentari Name",
+                              "fill": "$ink",
+                              "content": "Clara Mentari",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ke8Qp",
+                              "x": 44,
+                              "y": 29,
+                              "name": "Clara Mentari Email",
+                              "fill": "$muted",
+                              "content": "clara.mentari@email.com",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "gsn5u",
+                          "name": "Clara Mentari Cell 1",
+                          "width": 144,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Sqfju",
+                              "x": 8,
+                              "y": 11,
+                              "name": "Clara Mentari Job",
+                              "fill": "$ink",
+                              "content": "HR Assistant",
+                              "fontFamily": "$font",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "text",
+                              "id": "kpEe4",
+                              "x": 8,
+                              "y": 29,
+                              "name": "Clara Mentari Department",
+                              "fill": "$muted",
+                              "content": "Human Resources",
+                              "fontFamily": "$font",
+                              "fontSize": 8
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "MUg2d",
+                          "name": "Clara Mentari Cell 2",
+                          "width": 112,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jFHhV",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Clara Mentari Applied",
+                              "fill": "$ink",
+                              "content": "10 Jun 2035",
+                              "fontFamily": "$font",
+                              "fontSize": 9
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "f2OFiG",
+                          "name": "Clara Mentari Cell 3",
+                          "width": 149,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "O8CxPc",
+                              "x": 8,
+                              "y": 19,
+                              "name": "Clara Mentari Type",
+                              "fill": "$ink",
+                              "content": "Internship   On-Site",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "NV42S",
+                          "name": "Clara Mentari Cell 4",
+                          "width": 130,
+                          "height": "fill_container",
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "MLd6N",
+                              "x": 8,
+                              "y": 8,
+                              "name": "Clara Mentari Stage",
+                              "fill": "$ink",
+                              "content": "Application Received",
+                              "fontFamily": "$font",
+                              "fontSize": 9,
+                              "fontWeight": "500"
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "Zv5Mx",
+                              "x": 8,
+                              "y": 28,
+                              "name": "Clara Mentari Stage 1",
+                              "fill": "$lime",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "inAcz",
+                              "x": 14,
+                              "y": 30,
+                              "name": "Clara Mentari Stage Number 1",
+                              "fill": "$deep",
+                              "content": "1",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "K69eHm",
+                              "x": 28,
+                              "y": 28,
+                              "name": "Clara Mentari Stage 2",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "gOXi8",
+                              "x": 34,
+                              "y": 30,
+                              "name": "Clara Mentari Stage Number 2",
+                              "fill": "#A9B0AE",
+                              "content": "2",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "QyMh5",
+                              "x": 48,
+                              "y": 28,
+                              "name": "Clara Mentari Stage 3",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "o9PjSR",
+                              "x": 54,
+                              "y": 30,
+                              "name": "Clara Mentari Stage Number 3",
+                              "fill": "#A9B0AE",
+                              "content": "3",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "kesHy",
+                              "x": 68,
+                              "y": 28,
+                              "name": "Clara Mentari Stage 4",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "uRxoD",
+                              "x": 74,
+                              "y": 30,
+                              "name": "Clara Mentari Stage Number 4",
+                              "fill": "#A9B0AE",
+                              "content": "4",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            },
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 2,
+                              "id": "CAzXV",
+                              "x": 88,
+                              "y": 28,
+                              "name": "Clara Mentari Stage 5",
+                              "fill": "#F1F2F1",
+                              "width": 18,
+                              "height": 12
+                            },
+                            {
+                              "type": "text",
+                              "id": "d5LL1d",
+                              "x": 94,
+                              "y": 30,
+                              "name": "Clara Mentari Stage Number 5",
+                              "fill": "#A9B0AE",
+                              "content": "5",
+                              "fontFamily": "$font",
+                              "fontSize": 7
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "p393cq",
+              "x": 22,
+              "y": 900,
+              "name": "Copyright",
+              "fill": "$ink",
+              "content": "Copyright © 2025 Peterdraw",
+              "fontFamily": "$font",
+              "fontSize": 10,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "k87LA",
+              "x": 194,
+              "y": 900,
+              "name": "Privacy",
+              "fill": "$muted",
+              "content": "Privacy Policy     Term and conditions     Contact",
+              "fontFamily": "$font",
+              "fontSize": 10
+            },
+            {
+              "type": "icon",
+              "id": "n11lw9",
+              "x": 894,
+              "y": 896,
+              "name": "facebook Footer Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "facebook",
+              "library": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "icon",
+              "id": "Jj7UU",
+              "x": 927,
+              "y": 896,
+              "name": "twitter Footer Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "twitter",
+              "library": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "icon",
+              "id": "FMVcO",
+              "x": 960,
+              "y": 896,
+              "name": "instagram Footer Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "instagram",
+              "library": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "icon",
+              "id": "xyFpC",
+              "x": 993,
+              "y": 896,
+              "name": "youtube Footer Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "youtube",
+              "library": "lucide",
+              "fill": "$muted"
+            },
+            {
+              "type": "icon",
+              "id": "bHKi5",
+              "x": 1026,
+              "y": 896,
+              "name": "linkedin Footer Icon",
+              "width": 18,
+              "height": 18,
+              "icon": "linkedin",
+              "library": "lucide",
+              "fill": "$muted"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "bg": {
+      "type": "color",
+      "value": "#E7F1EF"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "panel": {
+      "type": "color",
+      "value": "#F7F8F7"
+    },
+    "ink": {
+      "type": "color",
+      "value": "#132E29"
+    },
+    "muted": {
+      "type": "color",
+      "value": "#697773"
+    },
+    "teal": {
+      "type": "color",
+      "value": "#36BEA6"
+    },
+    "deep": {
+      "type": "color",
+      "value": "#0B5C4E"
+    },
+    "lime": {
+      "type": "color",
+      "value": "#E6F3D3"
+    },
+    "line": {
+      "type": "color",
+      "value": "#E5EAE8"
+    },
+    "font": {
+      "type": "string",
+      "value": "Inter"
+    }
+  },
+  "fileToken": "2c063c0b-3bb6-4613-8861-5804fd0ba640"
+}
