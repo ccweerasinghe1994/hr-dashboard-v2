@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Recruitment Dashboard | TeamHub",
+  title: "Recruitment Dashboard",
   description: "A responsive recruitment operations dashboard.",
 };
 
