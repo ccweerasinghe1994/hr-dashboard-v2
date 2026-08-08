@@ -9,7 +9,7 @@ export function TeamHubLogo() {
     >
       <Blend aria-hidden="true" className="size-8 text-primary" />
       <span className="font-heading text-2xl font-bold tracking-tight">
-        TeamHub
+        TeamHubBeta
       </span>
     </a>
   );
