@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+# Points editors/IDEs to the Taskfile schema so YAML tooling can provide validation and autocompletion
+
+version: '3'  # Taskfile schema version: indicates which Taskfile format this file uses
+
+vars:
+  GREETING: Hello, world!  # Define a variable named GREETING with a default value; variables are referenced in commands via templating ({{.VAR_NAME}})
+
+tasks:
+  default:  # The name of the task. 'default' runs when no specific task name is provided on the command line
+    desc: Print a greeting message  # Human-friendly description shown in task listings
+    cmds:  # List of shell commands to execute for this task (runs in order)
+      - echo "{{.GREETING}}"  # Prints the GREETING variable to stdout. The {{.GREETING}} is expanded by the Taskfile templating engine
+    silent: true  # When true, suppresses echoing each command before execution (keeps output concise)
