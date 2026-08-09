@@ -18,7 +18,7 @@ import { resources } from "./data";
 
 export function ResourcesCard() {
   return (
-    <Card className="2xl:col-start-3 2xl:row-start-1">
+    <Card>
       <CardHeader>
         <CardTitle>Applicant Resources</CardTitle>
         <CardAction>

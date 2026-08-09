@@ -16,7 +16,7 @@ export function DepartmentChart() {
   const max = Math.max(...departments.map((department) => department.value));
 
   return (
-    <Card className="2xl:col-start-2 2xl:row-start-2">
+    <Card>
       <CardHeader>
         <CardTitle>Application by Department</CardTitle>
         <CardAction>

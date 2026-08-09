@@ -13,7 +13,7 @@ import { applicationGridLines, applicationMonths } from "./data";
 
 export function ApplicationChart() {
   return (
-    <Card className="2xl:col-start-2 2xl:row-start-1">
+    <Card>
       <CardHeader>
         <CardTitle>Application</CardTitle>
         <CardAction>

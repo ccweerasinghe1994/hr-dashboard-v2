@@ -21,7 +21,7 @@ import { Stages } from "./stages";
 
 export function ApplicantsCard() {
   return (
-    <Card className="xl:col-span-2 2xl:col-span-2 2xl:col-start-1 2xl:row-start-3">
+    <Card>
       <CardHeader>
         <CardTitle>Applicants</CardTitle>
         <CardAction>

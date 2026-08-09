@@ -24,12 +24,24 @@ export function RecruitmentDashboard() {
               className="mt-6 grid gap-5 xl:grid-cols-2 2xl:grid-cols-[minmax(500px,1.35fr)_minmax(360px,1fr)_310px]"
             >
               <RecruitmentSummary />
-              <ApplicationChart />
-              <ResourcesCard />
-              <VacanciesCard />
-              <DepartmentChart />
-              <SchedulesCard />
-              <ApplicantsCard />
+              <div className="2xl:col-start-2 2xl:row-start-1">
+                <ApplicationChart />
+              </div>
+              <div className="2xl:col-start-3 2xl:row-start-1">
+                <ResourcesCard />
+              </div>
+              <div className="2xl:col-start-1 2xl:row-start-2">
+                <VacanciesCard />
+              </div>
+              <div className="2xl:col-start-2 2xl:row-start-2">
+                <DepartmentChart />
+              </div>
+              <div className="2xl:col-start-3 2xl:row-span-2 2xl:row-start-2">
+                <SchedulesCard />
+              </div>
+              <div className="xl:col-span-2 2xl:col-span-2 2xl:col-start-1 2xl:row-start-3">
+                <ApplicantsCard />
+              </div>
             </div>
             <DashboardFooter />
           </div>
