@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/ccweerasinghe1994/hr-dashboard-v2:latest
+    image: ghcr.io/ccweerasinghe1994/hr-dashboard-v2:c800e05
     container_name: hr-dashboard
     restart: unless-stopped
 

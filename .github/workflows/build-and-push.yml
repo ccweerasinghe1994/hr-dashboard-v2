@@ -6,16 +6,25 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
   build-and-push:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Compute image tag
+        id: tag
+        run: |
+          SHORT_SHA="${GITHUB_SHA::7}"
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY}:${SHORT_SHA}"
+          echo "short_sha=${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+          echo "image=${IMAGE}" >> "$GITHUB_OUTPUT"
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
@@ -32,20 +41,42 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=sha,prefix=
-            type=raw,value=latest,enable={{is_default_branch}}
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.tag.outputs.image }}
+
+      - name: Update compose image tag
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          path = Path('docker-compose.yml')
+          content = path.read_text()
+          new = f'ghcr.io/ccweerasinghe1994/hr-dashboard-v2:${{ steps.tag.outputs.short_sha }}'
+          updated, count = re.subn(
+            r'ghcr\.io/ccweerasinghe1994/hr-dashboard-v2:[^\s]+',
+            new,
+            content,
+            count=1,
+          )
+          if count != 1:
+            raise SystemExit('Expected image tag not found in docker-compose.yml')
+          path.write_text(updated)
+          PY
+
+      - name: Commit updated compose file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docker-compose.yml
+          if git diff --cached --quiet; then
+            echo "No compose update to commit"
+            exit 0
+          fi
+          git commit -m "chore: update compose image tag to ${{ steps.tag.outputs.short_sha }}"
+          git push origin HEAD:${GITHUB_REF_NAME}
