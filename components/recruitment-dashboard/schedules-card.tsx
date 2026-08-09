@@ -14,7 +14,7 @@ import { MiniCalendar } from "./mini-calendar";
 
 export function SchedulesCard() {
   return (
-    <Card className="2xl:col-start-3 2xl:row-span-2 2xl:row-start-2">
+    <Card>
       <CardHeader>
         <CardTitle>Schedules</CardTitle>
         <CardAction>

@@ -14,7 +14,7 @@ import { VacancyCard } from "./vacancy-card";
 
 export function VacanciesCard() {
   return (
-    <Card className="2xl:col-start-1 2xl:row-start-2">
+    <Card>
       <CardHeader>
         <CardTitle>Current Vacancies</CardTitle>
         <CardAction>
