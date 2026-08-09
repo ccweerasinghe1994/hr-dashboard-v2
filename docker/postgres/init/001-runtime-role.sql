@@ -1,0 +1,7 @@
+DO $role$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'hr_app') THEN
+    CREATE ROLE hr_app LOGIN PASSWORD 'dev_runtime_password' NOSUPERUSER NOCREATEDB NOCREATEROLE NOBYPASSRLS;
+  END IF;
+END
+$role$;

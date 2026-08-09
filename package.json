@@ -7,7 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bun scripts/db/migrate.ts",
+    "db:seed": "bun scripts/db/seed.ts",
+    "system:provision-tenant": "bun scripts/system/provision-tenant.ts",
+    "system:set-tenant-status": "bun scripts/system/set-tenant-status.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

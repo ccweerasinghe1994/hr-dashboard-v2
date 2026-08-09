@@ -1,0 +1,3 @@
+# Separate system provisioning from tenant administration
+
+The first tenant is claimed through `/setup` only while no tenant exists and only with a server-configured one-time bootstrap secret. Bootstrap creates the tenant and owner before the first legal entity is created through the normal organization empty state. Public registration is disabled; after bootstrap, tenant creation and append-only effective-dated tenant activation changes require a system-provisioning command or service rather than tenant-owner authority, preventing a customer administrator from crossing the SaaS customer boundary.

@@ -43,6 +43,16 @@ export function Sidebar() {
           })}
         </ul>
       </nav>
+      <Link
+        href="/settings/organization"
+        className={cn(
+          buttonVariants({ variant: "ghost", size: "lg" }),
+          "mt-4 h-12 justify-start gap-3 px-4 text-base",
+        )}
+      >
+        <Settings2Icon aria-hidden="true" />
+        Organization settings
+      </Link>
       <Card className="mt-auto" size="sm" tone="highlight">
         <CardHeader>
           <CardTitle>Level Up Your HR System</CardTitle>
@@ -60,3 +70,6 @@ export function Sidebar() {
     </aside>
   );
 }
+
+import { Settings2Icon } from "lucide-react";
+import Link from "next/link";

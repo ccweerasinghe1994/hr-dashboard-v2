@@ -1,0 +1,3 @@
+# Version legal-entity configuration
+
+A legal entity has a stable identity and effective-dated configuration versions for legal name, display name, country, registration and tax identity, default currency, and operational status. Versions use non-overlapping half-open calendar-date intervals, may be scheduled in the future, and allow only one open-ended version. A business change splits the affected interval, while a correction supersedes an erroneous version at the same interval; backdated changes and corrections require a reason. This costs more than updating a single row but keeps historical employments and reports explainable after changes, while application APIs never hard-delete legal entities.
