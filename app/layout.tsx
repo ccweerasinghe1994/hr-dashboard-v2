@@ -1,31 +1,16 @@
-import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
+
 import "./globals.css";
 
-const nunitoSans = Nunito_Sans({subsets:['latin'],variable:'--font-sans'});
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "HR Dashboard",
-  description: "A responsive recruitment operations dashboard.",
+  title: "TeamHub | One place for your people operations",
+  description:
+    "Recruit, manage, and grow your workforce with TeamHub's connected HR platform.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", nunitoSans.variable)}
-    >
+    <html lang="en" className="h-full scroll-smooth font-sans antialiased">
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

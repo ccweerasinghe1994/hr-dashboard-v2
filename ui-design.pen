@@ -4,8 +4,8 @@
     {
       "type": "frame",
       "id": "bi8Au",
-      "x": -448,
-      "y": -30,
+      "x": -471,
+      "y": -80,
       "name": "TeamHub Recruitment Dashboard",
       "clip": true,
       "width": 1320,
@@ -70,7 +70,8 @@
               "fill": "#55645F",
               "content": "Dashboard",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -93,7 +94,8 @@
               "fill": "#55645F",
               "content": "Inbox",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -116,7 +118,8 @@
               "fill": "#55645F",
               "content": "Calendar",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -139,7 +142,8 @@
               "fill": "#55645F",
               "content": "Employees",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -162,7 +166,8 @@
               "fill": "#55645F",
               "content": "Attendance",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -185,7 +190,8 @@
               "fill": "#55645F",
               "content": "Performance",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -208,7 +214,8 @@
               "fill": "#55645F",
               "content": "Payroll",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
@@ -231,7 +238,8 @@
               "fill": "#55645F",
               "content": "Leave Management",
               "fontFamily": "$font",
-              "fontSize": 13
+              "fontSize": 13,
+              "fontWeight": "normal"
             },
             {
               "type": "rectangle",
@@ -578,7 +586,8 @@
                   "fill": "$muted",
                   "content": "Total Applicants",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -589,7 +598,8 @@
                   "fill": "$muted",
                   "content": "vs last month",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -636,7 +646,8 @@
                   "fill": "$muted",
                   "content": "Interviewed",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -671,7 +682,8 @@
                   "fill": "$muted",
                   "content": "of applicants",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -718,7 +730,8 @@
                   "fill": "$muted",
                   "content": "Hired",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -753,7 +766,8 @@
                   "fill": "$muted",
                   "content": "of applicants",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -823,7 +837,8 @@
                   "fill": "$muted",
                   "content": "200",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -844,7 +859,8 @@
                   "fill": "$muted",
                   "content": "150",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -865,7 +881,8 @@
                   "fill": "$muted",
                   "content": "100",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -886,7 +903,8 @@
                   "fill": "$muted",
                   "content": "50",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "path",
@@ -951,7 +969,8 @@
                   "fill": "$muted",
                   "content": "Jan",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -962,7 +981,8 @@
                   "fill": "$muted",
                   "content": "Feb",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -973,7 +993,8 @@
                   "fill": "$muted",
                   "content": "Mar",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -984,7 +1005,8 @@
                   "fill": "$muted",
                   "content": "Apr",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -995,7 +1017,8 @@
                   "fill": "$muted",
                   "content": "May",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1006,7 +1029,8 @@
                   "fill": "$muted",
                   "content": "Jun",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -1114,7 +1138,8 @@
                       "fill": "$muted",
                       "content": "Full-Time",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1137,7 +1162,8 @@
                       "fill": "$muted",
                       "content": "Remote",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1160,7 +1186,8 @@
                       "fill": "$muted",
                       "content": "18",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1209,7 +1236,8 @@
                       "fill": "$muted",
                       "content": "Full-Time",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1232,7 +1260,8 @@
                       "fill": "$muted",
                       "content": "On-Site",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1255,7 +1284,8 @@
                       "fill": "$muted",
                       "content": "15",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1304,7 +1334,8 @@
                       "fill": "$muted",
                       "content": "Internship",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1327,7 +1358,8 @@
                       "fill": "$muted",
                       "content": "On-Site",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1350,7 +1382,8 @@
                       "fill": "$muted",
                       "content": "10",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -1399,7 +1432,8 @@
                       "fill": "$muted",
                       "content": "Full-Time",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1422,7 +1456,8 @@
                       "fill": "$muted",
                       "content": "Hybrid",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "icon",
@@ -1445,7 +1480,8 @@
                       "fill": "$muted",
                       "content": "22",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -1512,7 +1548,8 @@
                   "fill": "$muted",
                   "content": "19",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1555,7 +1592,8 @@
                   "fill": "$muted",
                   "content": "27",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1598,7 +1636,8 @@
                   "fill": "$muted",
                   "content": "31",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1641,7 +1680,8 @@
                   "fill": "$muted",
                   "content": "22",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1684,7 +1724,8 @@
                   "fill": "$muted",
                   "content": "28",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1727,7 +1768,8 @@
                   "fill": "$muted",
                   "content": "19",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1792,7 +1834,8 @@
                   "fill": "$muted",
                   "content": "Job Portal",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1803,7 +1846,8 @@
                   "fill": "$muted",
                   "content": "57.5% | 84",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -1836,7 +1880,8 @@
                   "fill": "$muted",
                   "content": "Company Website",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1847,7 +1892,8 @@
                   "fill": "$muted",
                   "content": "20.5% | 30",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -1880,7 +1926,8 @@
                   "fill": "$muted",
                   "content": "Employee Referral",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1891,7 +1938,8 @@
                   "fill": "$muted",
                   "content": "15.1% | 22",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -1924,7 +1972,8 @@
                   "fill": "$muted",
                   "content": "Social Media (LinkedIn)",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1935,7 +1984,8 @@
                   "fill": "$muted",
                   "content": "6.9% | 10",
                   "fontFamily": "$font",
-                  "fontSize": 9
+                  "fontSize": 9,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -1968,7 +2018,8 @@
                   "fill": "$muted",
                   "content": "0",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1979,7 +2030,8 @@
                   "fill": "$muted",
                   "content": "25",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -1990,7 +2042,8 @@
                   "fill": "$muted",
                   "content": "50",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -2001,7 +2054,8 @@
                   "fill": "$muted",
                   "content": "75",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -2012,7 +2066,8 @@
                   "fill": "$muted",
                   "content": "100",
                   "fontFamily": "$font",
-                  "fontSize": 8
+                  "fontSize": 8,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -2131,7 +2186,8 @@
                       "fill": "$muted",
                       "content": "S",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2142,7 +2198,8 @@
                       "fill": "$ink",
                       "content": "17",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2153,7 +2210,8 @@
                       "fill": "$muted",
                       "content": "M",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2164,7 +2222,8 @@
                       "fill": "$ink",
                       "content": "18",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2175,7 +2234,8 @@
                       "fill": "$muted",
                       "content": "T",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2186,7 +2246,8 @@
                       "fill": "$ink",
                       "content": "19",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2197,7 +2258,8 @@
                       "fill": "$muted",
                       "content": "W",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "rectangle",
@@ -2231,7 +2293,8 @@
                       "fill": "$muted",
                       "content": "T",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2242,7 +2305,8 @@
                       "fill": "$ink",
                       "content": "21",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2253,7 +2317,8 @@
                       "fill": "$muted",
                       "content": "F",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2264,7 +2329,8 @@
                       "fill": "$ink",
                       "content": "22",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2275,7 +2341,8 @@
                       "fill": "$muted",
                       "content": "S",
                       "fontFamily": "$font",
-                      "fontSize": 8
+                      "fontSize": 8,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2286,7 +2353,8 @@
                       "fill": "$ink",
                       "content": "23",
                       "fontFamily": "$font",
-                      "fontSize": 10
+                      "fontSize": 10,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2333,7 +2401,8 @@
                       "fill": "$muted",
                       "content": "09:45 AM",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2356,7 +2425,8 @@
                       "fill": "$muted",
                       "content": "Lala Wijaya • Data Analyst",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2393,7 +2463,8 @@
                       "fill": "$muted",
                       "content": "01:00 PM",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2416,7 +2487,8 @@
                       "fill": "$muted",
                       "content": "William Hartono • UI Designer",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2453,7 +2525,8 @@
                       "fill": "$muted",
                       "content": "02:30 PM",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2476,7 +2549,8 @@
                       "fill": "$muted",
                       "content": "Arifin Maulana • Customer Support",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 },
@@ -2513,7 +2587,8 @@
                       "fill": "$muted",
                       "content": "03:10 PM",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     },
                     {
                       "type": "text",
@@ -2536,7 +2611,8 @@
                       "fill": "$muted",
                       "content": "Fanny Rizal • Sales Manager",
                       "fontFamily": "$font",
-                      "fontSize": 9
+                      "fontSize": 9,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -2598,7 +2674,8 @@
                   "fill": "$muted",
                   "content": "Application Received",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -2609,7 +2686,8 @@
                   "fill": "$muted",
                   "content": "Interview Scheduled",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -2620,7 +2698,8 @@
                   "fill": "$muted",
                   "content": "Final Interview",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "text",
@@ -2631,7 +2710,8 @@
                   "fill": "$muted",
                   "content": "Test Completed",
                   "fontFamily": "$font",
-                  "fontSize": 10
+                  "fontSize": 10,
+                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -2838,7 +2918,8 @@
                               "fill": "$muted",
                               "content": "william.hartono@email.com",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2871,7 +2952,8 @@
                               "fill": "$muted",
                               "content": "Product Design",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2892,7 +2974,8 @@
                               "fill": "$ink",
                               "content": "15 Jun 2035",
                               "fontFamily": "$font",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -2958,7 +3041,8 @@
                               "fill": "$deep",
                               "content": "1",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -2980,7 +3064,8 @@
                               "fill": "$deep",
                               "content": "2",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3002,7 +3087,8 @@
                               "fill": "$deep",
                               "content": "3",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3024,7 +3110,8 @@
                               "fill": "$deep",
                               "content": "4",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3046,7 +3133,8 @@
                               "fill": "#A9B0AE",
                               "content": "5",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3114,7 +3202,8 @@
                               "fill": "$muted",
                               "content": "fanny.rizal@email.com",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3147,7 +3236,8 @@
                               "fill": "$muted",
                               "content": "Operations",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3168,7 +3258,8 @@
                               "fill": "$ink",
                               "content": "12 Jun 2035",
                               "fontFamily": "$font",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3234,7 +3325,8 @@
                               "fill": "$deep",
                               "content": "1",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3256,7 +3348,8 @@
                               "fill": "$deep",
                               "content": "2",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3278,7 +3371,8 @@
                               "fill": "$deep",
                               "content": "3",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3300,7 +3394,8 @@
                               "fill": "$deep",
                               "content": "4",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3322,7 +3417,8 @@
                               "fill": "#A9B0AE",
                               "content": "5",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3390,7 +3486,8 @@
                               "fill": "$muted",
                               "content": "lala.wijaya@email.com",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3423,7 +3520,8 @@
                               "fill": "$muted",
                               "content": "R&D",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3444,7 +3542,8 @@
                               "fill": "$ink",
                               "content": "14 Jun 2035",
                               "fontFamily": "$font",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3510,7 +3609,8 @@
                               "fill": "$deep",
                               "content": "1",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3532,7 +3632,8 @@
                               "fill": "$deep",
                               "content": "2",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3554,7 +3655,8 @@
                               "fill": "#A9B0AE",
                               "content": "3",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3576,7 +3678,8 @@
                               "fill": "#A9B0AE",
                               "content": "4",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3598,7 +3701,8 @@
                               "fill": "#A9B0AE",
                               "content": "5",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3666,7 +3770,8 @@
                               "fill": "$muted",
                               "content": "arifin.maulana@email.com",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3699,7 +3804,8 @@
                               "fill": "$muted",
                               "content": "Customer Service",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3720,7 +3826,8 @@
                               "fill": "$ink",
                               "content": "13 Jun 2035",
                               "fontFamily": "$font",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3786,7 +3893,8 @@
                               "fill": "$deep",
                               "content": "1",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3808,7 +3916,8 @@
                               "fill": "$deep",
                               "content": "2",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3830,7 +3939,8 @@
                               "fill": "$deep",
                               "content": "3",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3852,7 +3962,8 @@
                               "fill": "$deep",
                               "content": "4",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -3874,7 +3985,8 @@
                               "fill": "#A9B0AE",
                               "content": "5",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -3942,7 +4054,8 @@
                               "fill": "$muted",
                               "content": "clara.mentari@email.com",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3975,7 +4088,8 @@
                               "fill": "$muted",
                               "content": "Human Resources",
                               "fontFamily": "$font",
-                              "fontSize": 8
+                              "fontSize": 8,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -3996,7 +4110,8 @@
                               "fill": "$ink",
                               "content": "10 Jun 2035",
                               "fontFamily": "$font",
-                              "fontSize": 9
+                              "fontSize": 9,
+                              "fontWeight": "normal"
                             }
                           ]
                         },
@@ -4062,7 +4177,8 @@
                               "fill": "$deep",
                               "content": "1",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -4084,7 +4200,8 @@
                               "fill": "#A9B0AE",
                               "content": "2",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -4106,7 +4223,8 @@
                               "fill": "#A9B0AE",
                               "content": "3",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -4128,7 +4246,8 @@
                               "fill": "#A9B0AE",
                               "content": "4",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             },
                             {
                               "type": "rectangle",
@@ -4150,7 +4269,8 @@
                               "fill": "#A9B0AE",
                               "content": "5",
                               "fontFamily": "$font",
-                              "fontSize": 7
+                              "fontSize": 7,
+                              "fontWeight": "normal"
                             }
                           ]
                         }
@@ -4181,7 +4301,8 @@
               "fill": "$muted",
               "content": "Privacy Policy     Term and conditions     Contact",
               "fontFamily": "$font",
-              "fontSize": 10
+              "fontSize": 10,
+              "fontWeight": "normal"
             },
             {
               "type": "icon",
