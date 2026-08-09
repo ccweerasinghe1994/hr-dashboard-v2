@@ -1,6 +1,5 @@
-import { RecruitmentDashboard } from "@/components/recruitment-dashboard";
+import { TeamHubLanding } from "@/components/teamhub-landing";
 
 export default function Home() {
-  return <RecruitmentDashboard />;
+  return <TeamHubLanding />;
 }
-  
