@@ -1,0 +1,3 @@
+# Test each risk at its real boundary
+
+TeamHub uses Bun for pure TypeScript unit tests, Bun against disposable real PostgreSQL for persistence, transaction, constraint, and tenant-isolation integration tests, and Playwright against a production Next.js build for authentication, Server Actions, redirects, and async Server Components. We avoid mocked Drizzle tests and initially avoid a separate Vitest/React Testing Library stack because those alternatives can make framework or database behavior appear correct without exercising the security boundary that owns it; this adds three explicit test commands and a PostgreSQL-backed CI stage in exchange for higher-confidence failures.

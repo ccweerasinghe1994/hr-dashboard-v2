@@ -96,6 +96,13 @@ bun run typecheck
 bun run build
 ```
 
+For a complete human verification of setup, authentication, organization
+settings, legal-entity history, tenant isolation, audit evidence, responsive
+behavior, and accessibility, follow the
+[organization foundation manual QA runbook](docs/manual-qa-organization-foundation.md).
+The target automated suite boundaries, commands, database lifecycle, and
+coverage policy are defined in the [testing strategy](docs/testing.md).
+
 The database-backed isolation suite runs when both `TEST_ADMIN_DATABASE_URL`
 and `TEST_DATABASE_URL` are set. The admin URL prepares and removes fixtures;
 the runtime URL must use the restricted role. CI creates a clean PostgreSQL
