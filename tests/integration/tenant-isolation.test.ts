@@ -1,9 +1,8 @@
 import { afterAll, beforeAll, describe, expect, test } from "bun:test";
 import postgres from "postgres";
+import { testDatabaseEnvironment } from "../support/integration-environment";
 
-const adminUrl = process.env.TEST_ADMIN_DATABASE_URL;
-const runtimeUrl = process.env.TEST_DATABASE_URL;
-const describeDatabase = adminUrl && runtimeUrl ? describe : describe.skip;
+const { adminUrl, runtimeUrl } = testDatabaseEnvironment;
 
 const fixture = {
   userA: "91000000-0000-4000-8000-000000000001",
@@ -14,9 +13,9 @@ const fixture = {
   entityB: "93000000-0000-4000-8000-000000000002",
 };
 
-describeDatabase("forced tenant row-level security", () => {
-  const admin = postgres(adminUrl ?? "", { max: 1, prepare: false });
-  const runtime = postgres(runtimeUrl ?? "", { max: 1, prepare: false });
+describe("forced tenant row-level security", () => {
+  const admin = postgres(adminUrl, { max: 1, prepare: false });
+  const runtime = postgres(runtimeUrl, { max: 1, prepare: false });
 
   beforeAll(async () => {
     await admin.begin(async (sql) => {

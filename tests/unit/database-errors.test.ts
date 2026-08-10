@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { isConstraintConflict } from "../data/database-errors";
+import { isConstraintConflict } from "../../data/database-errors";
 
 describe("database conflict classification", () => {
   test("recognizes direct PostgreSQL constraint codes", () => {
