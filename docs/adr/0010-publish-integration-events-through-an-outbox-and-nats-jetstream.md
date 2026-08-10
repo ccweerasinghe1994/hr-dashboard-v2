@@ -1,0 +1,3 @@
+# Publish integration events through an outbox and NATS JetStream
+
+At MVP-009, insert each publishable canonical integration event into a PostgreSQL outbox in the same transaction as its authoritative HR mutation so web correctness never depends on NATS availability. The integration worker claims outbox records and publishes versioned events to NATS JetStream using the event ID for deduplication, updating delivery state only after acknowledgment; consumers must remain idempotent under at-least-once delivery and retries and failures must be observable. NATS is an asynchronous integration seam rather than an in-process command bus, and connector failure never changes already committed HR lifecycle state.
