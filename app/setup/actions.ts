@@ -3,8 +3,7 @@
 import { redirect } from "next/navigation";
 import { type ActionState, formValue } from "@/app/action-state";
 import { provisionFirstTenant } from "@/data/bootstrap";
-import { isConstraintConflict } from "@/data/database-errors";
-import { ConflictError } from "@/data/errors";
+import { bootstrapErrorMessage } from "@/data/expected-errors";
 import { auth } from "@/lib/auth";
 import { bootstrapSchema } from "@/lib/validation/organization";
 
@@ -36,14 +35,9 @@ export async function bootstrapAction(
       body: { email: parsed.data.email, password: parsed.data.password },
     });
   } catch (error) {
-    if (error instanceof ConflictError) {
-      return { status: "error", message: error.message };
-    }
-    if (isConstraintConflict(error)) {
-      return {
-        status: "error",
-        message: "That email address or organization slug is already in use.",
-      };
+    const message = bootstrapErrorMessage(error);
+    if (message !== null) {
+      return { status: "error", message };
     }
     throw error;
   }
