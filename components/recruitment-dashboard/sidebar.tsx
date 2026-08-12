@@ -1,3 +1,5 @@
+import { Settings2Icon } from "lucide-react";
+import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -70,6 +72,3 @@ export function Sidebar() {
     </aside>
   );
 }
-
-import { Settings2Icon } from "lucide-react";
-import Link from "next/link";

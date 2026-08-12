@@ -31,6 +31,8 @@ import {
   TenantUnavailableError,
 } from "@/data/errors";
 import { getLegalEntity } from "@/data/legal-entities";
+import { getTenantSettings } from "@/data/tenants";
+import { createTenantDateTimeFormatter } from "@/lib/date-time";
 import { cn } from "@/lib/utils";
 
 function tomorrowUtc() {
@@ -42,8 +44,12 @@ export default async function LegalEntityPage({
 }: PageProps<"/settings/organization/legal-entities/[legalEntityId]">) {
   const { legalEntityId } = await params;
   let entity: Awaited<ReturnType<typeof getLegalEntity>>;
+  let tenant: Awaited<ReturnType<typeof getTenantSettings>>;
   try {
-    entity = await getLegalEntity(legalEntityId);
+    [entity, tenant] = await Promise.all([
+      getLegalEntity(legalEntityId),
+      getTenantSettings(),
+    ]);
   } catch (error) {
     if (error instanceof AuthenticationRequiredError) redirect("/sign-in");
     if (error instanceof AuthorizationError) return <PermissionNotice />;
@@ -55,6 +61,7 @@ export default async function LegalEntityPage({
   }
 
   const current = entity.current;
+  const recordedAtFormatter = createTenantDateTimeFormatter(tenant);
   return (
     <div className="flex flex-col gap-6">
       <Link
@@ -176,7 +183,7 @@ export default async function LegalEntityPage({
                   </TableCell>
                   <TableCell>
                     <time dateTime={configuration.recordedAt.toISOString()}>
-                      {configuration.recordedAt.toLocaleDateString()}
+                      {recordedAtFormatter.format(configuration.recordedAt)}
                     </time>
                   </TableCell>
                   <TableCell className="text-right">

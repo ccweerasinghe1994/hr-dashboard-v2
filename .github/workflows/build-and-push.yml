@@ -108,6 +108,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate ephemeral Better Auth build secret
+        shell: bash
+        run: |
+          umask 077
+          openssl rand -base64 32 > "${RUNNER_TEMP}/better-auth-build-secret"
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -115,8 +121,10 @@ jobs:
           file: Dockerfile
           push: true
           tags: ${{ steps.tag.outputs.image }}
-          build-args: |
-            NEXT_SERVER_ACTIONS_ENCRYPTION_KEY=${{ secrets.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY }}
+          secrets: |
+            next_server_actions_encryption_key=${{ secrets.NEXT_SERVER_ACTIONS_ENCRYPTION_KEY }}
+          secret-files: |
+            better_auth_secret=${{ runner.temp }}/better-auth-build-secret
 
       - name: Update compose image tag
         run: |

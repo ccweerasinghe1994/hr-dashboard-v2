@@ -17,10 +17,7 @@ export function databaseUrl() {
 }
 
 export function betterAuthSecret() {
-  return required(
-    "BETTER_AUTH_SECRET",
-    "build-only-better-auth-secret-0000000000000000",
-  );
+  return required("BETTER_AUTH_SECRET");
 }
 
 export function betterAuthUrl() {

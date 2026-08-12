@@ -113,9 +113,26 @@ ownership before linting and building.
 
 Required runtime values are listed in `.env.example`. A multi-instance release
 must also inject the same `NEXT_SERVER_ACTIONS_ENCRYPTION_KEY` while building
-every image in that release. The production `docker-compose.yml` intentionally
-does not contain a database or run migrations; it expects externally managed
-PostgreSQL and an already migrated schema.
+every image in that release. The Docker build accepts that value through the
+BuildKit secret named `next_server_actions_encryption_key`; it is never passed
+as a Docker build argument. The build also requires a temporary
+`better_auth_secret` BuildKit secret so Next.js can evaluate the authentication
+configuration without embedding a source-code fallback. The real
+`BETTER_AUTH_SECRET` remains a required runtime value supplied by Portainer.
+
+For a local image build, forward values from the current shell without placing
+them in the Dockerfile or command history:
+
+```bash
+docker build \
+  --secret id=next_server_actions_encryption_key,env=NEXT_SERVER_ACTIONS_ENCRYPTION_KEY \
+  --secret id=better_auth_secret,env=BETTER_AUTH_SECRET \
+  -t hr-dashboard-v2:local .
+```
+
+The production `docker-compose.yml` intentionally does not contain a database
+or run migrations; it expects externally managed PostgreSQL and an already
+migrated schema.
 
 Tax identifiers are encrypted with AES-256-GCM using a domain-separated key,
 hashed separately only for tenant-scoped uniqueness, and returned to the UI as
