@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM oven/bun:1.3.14-alpine AS dependencies
 
 WORKDIR /app
@@ -15,7 +17,9 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN node node_modules/next/dist/bin/next build
+RUN --mount=type=secret,id=better_auth_secret,env=BETTER_AUTH_SECRET,required=true \
+    --mount=type=secret,id=next_server_actions_encryption_key,env=NEXT_SERVER_ACTIONS_ENCRYPTION_KEY,required=true \
+    node node_modules/next/dist/bin/next build
 
 
 FROM node:24-alpine AS runner

@@ -1,0 +1,3 @@
+# Pull authentication and audit foundations into tenant setup
+
+MVP-001 will include the minimum authenticated identity, tenant-membership, session, and append-only audit-event slices needed to derive tenant context and atomically attribute mutations. The current tenant is server-owned session state, automatically selected only for a sole active membership and changed only after membership authorization; MFA, recovery, broader session management, audit search, and audit policy remain in their later roadmap items. Accepting an arbitrary client-provided tenant identifier or leaving an unimplemented audit hook would not satisfy this feature's security boundary.

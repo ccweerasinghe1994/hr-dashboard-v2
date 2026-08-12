@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const nunitoSans = Nunito_Sans({subsets:['latin'],variable:'--font-sans'});
+const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,15 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HR Dashboard",
-  description: "A responsive recruitment operations dashboard.",
+  title: "TeamHub HR Dashboard",
+  description: "Tenant-isolated HR organization and recruitment operations.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", nunitoSans.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        nunitoSans.variable,
+      )}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
