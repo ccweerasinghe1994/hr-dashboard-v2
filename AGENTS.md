@@ -9,3 +9,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 <!-- END:nextjs-agent-rules -->
 
 this project is using bun
+
+when reporting information to me, be extremely concise and sacrifice grammar for the sake of concision
