@@ -4,12 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { type ActionState, formValue } from "@/app/action-state";
-import { isConstraintConflict } from "@/data/database-errors";
-import {
-  ConflictError,
-  NotFoundError,
-  TenantUnavailableError,
-} from "@/data/errors";
+import { legalEntityMutationErrorMessage } from "@/data/expected-errors";
 import {
   changeLegalEntityStatus,
   correctLegalEntityConfiguration,
@@ -37,21 +32,8 @@ function legalEntityInput(formData: FormData) {
 }
 
 function expectedMutationError(error: unknown): ActionState | null {
-  if (
-    error instanceof ConflictError ||
-    error instanceof NotFoundError ||
-    error instanceof TenantUnavailableError
-  ) {
-    return { status: "error", message: error.message };
-  }
-  if (isConstraintConflict(error)) {
-    return {
-      status: "error",
-      message:
-        "That legal name or identifier conflicts with another effective record in this organization.",
-    };
-  }
-  return null;
+  const message = legalEntityMutationErrorMessage(error);
+  return message === null ? null : { status: "error", message };
 }
 
 export async function updateTenantAction(
