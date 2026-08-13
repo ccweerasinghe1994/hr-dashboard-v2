@@ -12,6 +12,7 @@ import { ConflictError } from "@/data/errors";
 import * as schema from "@/db/schema";
 import { provisionFirstTenantInDatabase } from "@/lib/organization/bootstrap-persistence";
 import { captureError } from "../support/capture-error";
+import { forcedAuditFailure } from "../support/forced-audit-failure";
 import { testDatabaseEnvironment } from "../support/integration-environment";
 
 const { adminUrl, runtimeUrl } = testDatabaseEnvironment;
@@ -43,6 +44,11 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
     onnotice: () => undefined,
   });
   const runtime = drizzle({ client: runtimeClient, schema });
+  const auditFailure = forcedAuditFailure(
+    admin,
+    "issue_239_fail_bootstrap_audit_insert",
+    "forced bootstrap audit failure",
+  );
 
   async function cleanBootstrapFixtures() {
     await admin.begin(async (sql) => {
@@ -65,24 +71,6 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
       await sql`delete from "user" where email like ${`${fixturePrefix}-%`}`;
       await sql`update system_state set bootstrap_completed = false where id = 1`;
     });
-  }
-
-  async function disableForcedBootstrapAuditFailure() {
-    await admin`drop trigger if exists issue_239_fail_bootstrap_audit_insert on audit_event`;
-    await admin`drop function if exists issue_239_fail_bootstrap_audit_insert()`;
-  }
-
-  async function enableForcedBootstrapAuditFailure() {
-    await disableForcedBootstrapAuditFailure();
-    await admin`create function issue_239_fail_bootstrap_audit_insert()
-      returns trigger language plpgsql as $$
-      begin
-        raise exception 'forced bootstrap audit failure';
-      end
-      $$`;
-    await admin`create trigger issue_239_fail_bootstrap_audit_insert
-      before insert on audit_event
-      for each row execute function issue_239_fail_bootstrap_audit_insert()`;
   }
 
   async function bootstrapState(input: ReturnType<typeof bootstrapInput>) {
@@ -175,17 +163,17 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
   }
 
   beforeAll(async () => {
-    await disableForcedBootstrapAuditFailure();
+    await auditFailure.disable();
     await cleanBootstrapFixtures();
   });
   beforeEach(async () => {
-    await disableForcedBootstrapAuditFailure();
+    await auditFailure.disable();
     await cleanBootstrapFixtures();
   });
 
   afterAll(async () => {
     try {
-      await disableForcedBootstrapAuditFailure();
+      await auditFailure.disable();
       await cleanBootstrapFixtures();
     } finally {
       await Promise.all([admin.end(), runtimeClient.end()]);
@@ -383,7 +371,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
 
   test("bootstrap rolls back when its audit event cannot commit", async () => {
     const input = bootstrapInput("audit-rollback");
-    await enableForcedBootstrapAuditFailure();
+    await auditFailure.enable();
 
     let mutationError: unknown;
     try {
@@ -396,7 +384,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
         ),
       );
     } finally {
-      await disableForcedBootstrapAuditFailure();
+      await auditFailure.disable();
     }
     const cause =
       mutationError instanceof Error && "cause" in mutationError

@@ -15,6 +15,7 @@ import {
 } from "@/lib/organization/tenant-settings-persistence";
 import { withTenantContextForSession } from "@/lib/tenancy/tenant-context-persistence";
 import { captureError } from "../support/capture-error";
+import { forcedAuditFailure } from "../support/forced-audit-failure";
 import { testDatabaseEnvironment } from "../support/integration-environment";
 
 const { adminUrl, runtimeUrl } = testDatabaseEnvironment;
@@ -51,6 +52,11 @@ describe("tenant settings authorization and transaction boundaries", () => {
     onnotice: () => undefined,
   });
   const runtime = drizzle({ client: runtimeClient, schema });
+  const auditFailure = forcedAuditFailure(
+    admin,
+    "issue_239_fail_settings_audit_insert",
+    "forced audit failure",
+  );
 
   async function cleanFixture() {
     const tenantIds = [
@@ -73,24 +79,6 @@ describe("tenant settings authorization and transaction boundaries", () => {
     });
   }
 
-  async function disableForcedAuditFailure() {
-    await admin`drop trigger if exists issue_239_fail_audit_insert on audit_event`;
-    await admin`drop function if exists issue_239_fail_audit_insert()`;
-  }
-
-  async function enableForcedAuditFailure() {
-    await disableForcedAuditFailure();
-    await admin`create function issue_239_fail_audit_insert()
-      returns trigger language plpgsql as $$
-      begin
-        raise exception 'forced audit failure';
-      end
-      $$`;
-    await admin`create trigger issue_239_fail_audit_insert
-      before insert on audit_event
-      for each row execute function issue_239_fail_audit_insert()`;
-  }
-
   beforeAll(async () => {
     await cleanFixture();
     await admin.begin(async (sql) => {
@@ -105,9 +93,9 @@ describe("tenant settings authorization and transaction boundaries", () => {
         (${fixture.inactiveTenantId}, 'Inactive Tenant', ${`inactive-${suffix}`}, ${`inactive-${suffix}`}, 'en-US', 'UTC')`;
       await sql`insert into tenant_status_period
         (tenant_id, status, valid_from, recorded_by) values
-        (${fixture.ownerTenantId}, 'active', current_date, ${fixture.ownerUserId}),
-        (${fixture.memberTenantId}, 'active', current_date, ${fixture.memberUserId}),
-        (${fixture.inactiveTenantId}, 'inactive', current_date, ${fixture.inactiveOwnerUserId})`;
+        (${fixture.ownerTenantId}, 'active', ${asOfDate}, ${fixture.ownerUserId}),
+        (${fixture.memberTenantId}, 'active', ${asOfDate}, ${fixture.memberUserId}),
+        (${fixture.inactiveTenantId}, 'inactive', ${asOfDate}, ${fixture.inactiveOwnerUserId})`;
       await sql`insert into tenant_membership
         (tenant_id, user_id, role, status) values
         (${fixture.ownerTenantId}, ${fixture.ownerUserId}, 'owner', 'active'),
@@ -122,7 +110,7 @@ describe("tenant settings authorization and transaction boundaries", () => {
   });
 
   beforeEach(async () => {
-    await disableForcedAuditFailure();
+    await auditFailure.disable();
     await admin.begin(async (sql) => {
       await sql`delete from audit_event where tenant_id = ${fixture.ownerTenantId}`;
       await sql`update tenant set
@@ -138,7 +126,7 @@ describe("tenant settings authorization and transaction boundaries", () => {
 
   afterAll(async () => {
     try {
-      await disableForcedAuditFailure();
+      await auditFailure.disable();
       await cleanFixture();
     } finally {
       await Promise.all([admin.end(), runtimeClient.end()]);
@@ -392,7 +380,7 @@ describe("tenant settings authorization and transaction boundaries", () => {
       fixture.ownerSessionId,
       fixture.ownerTenantId,
     );
-    await enableForcedAuditFailure();
+    await auditFailure.enable();
 
     let mutationError: unknown;
     try {
@@ -411,7 +399,7 @@ describe("tenant settings authorization and transaction boundaries", () => {
         ),
       );
     } finally {
-      await disableForcedAuditFailure();
+      await auditFailure.disable();
     }
     const cause =
       mutationError instanceof Error && "cause" in mutationError
