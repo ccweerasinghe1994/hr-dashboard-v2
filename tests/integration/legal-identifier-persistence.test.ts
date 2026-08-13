@@ -34,7 +34,6 @@ describe("persisted legal identifier boundaries", () => {
   const runtimeClient = postgres(runtimeUrl, { max: 1, prepare: false });
   const runtime = drizzle({ client: runtimeClient, schema });
   let legalEntityId = "";
-  let persistedIdentifierSecrets = { ciphertext: "", hash: "" };
 
   async function withFixtureTenantContext<T>(
     operation: (tx: LegalEntityPersistenceTransaction) => Promise<T>,
@@ -111,10 +110,6 @@ describe("persisted legal identifier boundaries", () => {
     if (!persisted.ciphertext || !persisted.hash) {
       throw new Error("Expected persisted legal identifier protection.");
     }
-    persistedIdentifierSecrets = {
-      ciphertext: persisted.ciphertext,
-      hash: persisted.hash,
-    };
   });
 
   afterAll(async () => {
@@ -158,12 +153,16 @@ describe("persisted legal identifier boundaries", () => {
           ),
         ),
     );
-    const serializedAudit = JSON.stringify(event.after);
-
-    expect([
-      serializedAudit.includes(plaintextTaxIdentifier),
-      serializedAudit.includes(persistedIdentifierSecrets.ciphertext),
-      serializedAudit.includes(persistedIdentifierSecrets.hash),
-    ]).toEqual([false, false, false]);
+    expect(event.after).toEqual({
+      legalName: fixture.legalName,
+      displayName: fixture.displayName,
+      countryCode: "GB",
+      registrationNumber: fixture.registrationNumber,
+      currencyCode: "GBP",
+      status: "active",
+      validFrom: effectiveDate,
+      validTo: null,
+      hasTaxIdentifier: true,
+    });
   });
 });

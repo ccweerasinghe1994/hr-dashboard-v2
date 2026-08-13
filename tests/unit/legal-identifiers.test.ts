@@ -50,10 +50,15 @@ describe("legal identifier protection", () => {
     ).toBe("3456");
   });
 
-  test("produces a keyed lookup hash", () => {
-    expect(protector.protectTaxIdentifier("GB-12/3456").hash).toMatch(
-      /^[0-9a-f]{64}$/,
-    );
+  test("produces a key-dependent lookup hash", () => {
+    const identifier = "GB-12/3456";
+    const first = protector.protectTaxIdentifier(identifier).hash;
+    const second = createLegalIdentifierProtector(
+      Buffer.alloc(32, 0x2b),
+    ).protectTaxIdentifier(identifier).hash;
+
+    expect(first).toMatch(/^[0-9a-f]{64}$/);
+    expect(first).not.toBe(second);
   });
 
   test("hashes equivalent normalized values deterministically", () => {
@@ -66,9 +71,12 @@ describe("legal identifier protection", () => {
   });
 
   test("rejects unsupported ciphertext versions", () => {
-    expect(() =>
-      protector.revealTaxIdentifier("v2.nonce.tag.ciphertext"),
-    ).toThrow("Unsupported legal identifier ciphertext.");
+    const { ciphertext } = protector.protectTaxIdentifier("GB-12/3456");
+    const unsupportedCiphertext = ciphertext.replace(/^v1\./, "v2.");
+
+    expect(() => protector.revealTaxIdentifier(unsupportedCiphertext)).toThrow(
+      "Unsupported legal identifier ciphertext.",
+    );
   });
 
   test("rejects tampered ciphertext", () => {
