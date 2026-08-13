@@ -11,7 +11,7 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "bun run test:unit",
     "test:unit": "bun test",
-    "test:integration": "bun test --config=./bunfig.integration.toml",
+    "test:integration": "bun test --conditions=react-server --config=./bunfig.integration.toml",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "bun scripts/db/migrate.ts",
     "db:seed": "bun scripts/db/seed.ts",
