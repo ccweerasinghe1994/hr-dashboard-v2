@@ -1,30 +1,30 @@
 import "server-only";
 
-import { and, desc, eq, gt, isNull, lte, or, sql } from "drizzle-orm";
+import { and, desc, eq, isNull } from "drizzle-orm";
 import {
   auditEvents,
   legalEntities,
   legalEntityConfigurations,
 } from "@/db/schema";
+import { selectEffectivePeriod } from "@/lib/organization/effective-periods";
 import {
   type LegalEntitySummaryDto,
   toLegalEntityAuditSnapshot,
   toLegalEntitySummary,
 } from "@/lib/organization/legal-entity-boundaries";
 import {
-  buildLegalEntityConfigurationValues,
+  correctLegalEntityConfigurationForTenant,
   createLegalEntityForTenant,
+  findContainingLegalEntityConfiguration,
   type LegalEntityInput,
   legalEntityConfigurationSelection,
   listLegalEntitiesForTenant,
+  lockLegalEntityForTenant,
+  scheduleLegalEntityChangeForTenant,
 } from "@/lib/organization/legal-entity-persistence";
 import { protectTaxIdentifier } from "@/lib/security/legal-identifiers";
 import { ConflictError, NotFoundError } from "./errors";
-import {
-  type TenantContext,
-  type TenantTransaction,
-  withTenantContext,
-} from "./tenant-context";
+import { withTenantContext } from "./tenant-context";
 
 export type { LegalEntitySummaryDto } from "@/lib/organization/legal-entity-boundaries";
 export type { LegalEntityInput } from "@/lib/organization/legal-entity-persistence";
@@ -87,11 +87,9 @@ export async function getLegalEntity(legalEntityId: string) {
       superseded: row.supersededAt !== null,
     }));
     const today = todayUtc();
-    const current = configurations.find(
-      (item) =>
-        !item.superseded &&
-        item.validFrom <= today &&
-        (item.validTo === null || item.validTo > today),
+    const current = selectEffectivePeriod(
+      configurations.filter((item) => !item.superseded),
+      today,
     );
     return { id: legalEntityId, current: current ?? null, configurations };
   }, "owner");
@@ -105,116 +103,21 @@ export async function createLegalEntity(input: LegalEntityInput) {
   );
 }
 
-async function lockEntity(
-  tx: TenantTransaction,
-  context: TenantContext,
-  legalEntityId: string,
-) {
-  const result = await tx.execute(
-    sql`select id from legal_entity where tenant_id = ${context.tenantId} and id = ${legalEntityId} for update`,
-  );
-  if (result.length === 0) throw new NotFoundError("Legal entity not found.");
-}
-
-async function containingConfiguration(
-  tx: TenantTransaction,
-  context: TenantContext,
-  legalEntityId: string,
-  effectiveDate: string,
-) {
-  const [configuration] = await tx
-    .select()
-    .from(legalEntityConfigurations)
-    .where(
-      and(
-        eq(legalEntityConfigurations.tenantId, context.tenantId),
-        eq(legalEntityConfigurations.legalEntityId, legalEntityId),
-        isNull(legalEntityConfigurations.supersededAt),
-        lte(legalEntityConfigurations.validFrom, effectiveDate),
-        or(
-          isNull(legalEntityConfigurations.validTo),
-          gt(legalEntityConfigurations.validTo, effectiveDate),
-        ),
-      ),
-    )
-    .limit(1);
-  return configuration;
-}
-
 export async function scheduleLegalEntityChange(
   legalEntityId: string,
   input: LegalEntityInput,
 ) {
-  return withTenantContext(async (tx, context) => {
-    await lockEntity(tx, context, legalEntityId);
-    const prior = await containingConfiguration(
-      tx,
-      context,
-      legalEntityId,
-      input.effectiveDate,
-    );
-    if (!prior) {
-      throw new ConflictError("No configuration covers that effective date.");
-    }
-    if (prior.validFrom === input.effectiveDate) {
-      throw new ConflictError(
-        "A configuration already starts on that date. Correct that record instead.",
-      );
-    }
-
-    const recordedAt = new Date();
-    await tx
-      .update(legalEntityConfigurations)
-      .set({ supersededAt: recordedAt, supersededBy: context.userId })
-      .where(
-        and(
-          eq(legalEntityConfigurations.tenantId, context.tenantId),
-          eq(legalEntityConfigurations.id, prior.id),
-          isNull(legalEntityConfigurations.supersededAt),
-        ),
-      );
-    await tx.insert(legalEntityConfigurations).values({
-      ...prior,
-      id: crypto.randomUUID(),
-      validTo: input.effectiveDate,
-      recordedAt,
-      recordedBy: context.userId,
-      supersedesId: prior.id,
-      supersededAt: null,
-      supersededBy: null,
-      changeReason: `Interval closed: ${input.reason}`,
-    });
-    const [after] = await tx
-      .insert(legalEntityConfigurations)
-      .values({
-        ...buildLegalEntityConfigurationValues(
-          input,
-          context,
-          legalEntityId,
-          protectTaxIdentifier,
-          {
-            ciphertext: prior.taxIdentifierCiphertext,
-            hash: prior.taxIdentifierHash,
-            lastFour: prior.taxIdentifierLastFour,
-          },
-        ),
-        validTo: prior.validTo,
-        status: prior.status,
-      })
-      .returning(selection);
-    await tx.insert(auditEvents).values({
-      tenantId: context.tenantId,
-      actorUserId: context.userId,
-      source: "ui",
-      action: "legal_entity.configuration_changed",
-      objectType: "legal_entity",
-      objectId: legalEntityId,
-      effectiveDate: input.effectiveDate,
-      reason: input.reason,
-      before: toLegalEntityAuditSnapshot(prior),
-      after: toLegalEntityAuditSnapshot(after),
-    });
-  }, "owner");
+  return withTenantContext(
+    (tx, context) =>
+      scheduleLegalEntityChangeForTenant(
+        tx,
+        context,
+        legalEntityId,
+        input,
+        protectTaxIdentifier,
+      ),
+    "owner",
+  );
 }
 
 export async function correctLegalEntityConfiguration(
@@ -222,69 +125,18 @@ export async function correctLegalEntityConfiguration(
   configurationId: string,
   input: LegalEntityInput,
 ) {
-  return withTenantContext(async (tx, context) => {
-    await lockEntity(tx, context, legalEntityId);
-    const [prior] = await tx
-      .select()
-      .from(legalEntityConfigurations)
-      .where(
-        and(
-          eq(legalEntityConfigurations.tenantId, context.tenantId),
-          eq(legalEntityConfigurations.legalEntityId, legalEntityId),
-          eq(legalEntityConfigurations.id, configurationId),
-          isNull(legalEntityConfigurations.supersededAt),
-        ),
-      )
-      .limit(1);
-    if (!prior) throw new NotFoundError("Configuration not found.");
-    if (input.effectiveDate !== prior.validFrom) {
-      throw new ConflictError("A correction cannot change the effective date.");
-    }
-
-    const recordedAt = new Date();
-    await tx
-      .update(legalEntityConfigurations)
-      .set({ supersededAt: recordedAt, supersededBy: context.userId })
-      .where(
-        and(
-          eq(legalEntityConfigurations.tenantId, context.tenantId),
-          eq(legalEntityConfigurations.id, configurationId),
-          isNull(legalEntityConfigurations.supersededAt),
-        ),
-      );
-    const [after] = await tx
-      .insert(legalEntityConfigurations)
-      .values({
-        ...buildLegalEntityConfigurationValues(
-          input,
-          context,
-          legalEntityId,
-          protectTaxIdentifier,
-          {
-            ciphertext: prior.taxIdentifierCiphertext,
-            hash: prior.taxIdentifierHash,
-            lastFour: prior.taxIdentifierLastFour,
-          },
-        ),
-        validTo: prior.validTo,
-        status: prior.status,
-        supersedesId: prior.id,
-        recordedAt,
-      })
-      .returning(selection);
-    await tx.insert(auditEvents).values({
-      tenantId: context.tenantId,
-      actorUserId: context.userId,
-      source: "ui",
-      action: "legal_entity.configuration_corrected",
-      objectType: "legal_entity",
-      objectId: legalEntityId,
-      effectiveDate: prior.validFrom,
-      reason: input.reason,
-      before: toLegalEntityAuditSnapshot(prior),
-      after: toLegalEntityAuditSnapshot(after),
-    });
-  }, "owner");
+  return withTenantContext(
+    (tx, context) =>
+      correctLegalEntityConfigurationForTenant(
+        tx,
+        context,
+        legalEntityId,
+        configurationId,
+        input,
+        protectTaxIdentifier,
+      ),
+    "owner",
+  );
 }
 
 export async function changeLegalEntityStatus(
@@ -294,8 +146,8 @@ export async function changeLegalEntityStatus(
   reason: string,
 ) {
   return withTenantContext(async (tx, context) => {
-    await lockEntity(tx, context, legalEntityId);
-    const prior = await containingConfiguration(
+    await lockLegalEntityForTenant(tx, context, legalEntityId);
+    const prior = await findContainingLegalEntityConfiguration(
       tx,
       context,
       legalEntityId,
