@@ -1,3 +1,5 @@
+import "server-only";
+
 import { eq } from "drizzle-orm";
 import { NotFoundError } from "@/data/errors";
 import { auditEvents, tenants } from "@/db/schema";
@@ -13,6 +15,12 @@ export type TenantSettingsDto = Readonly<{
   locale: string;
   timezone: string;
   dataRegion: string | null;
+}>;
+
+export type TenantSettingsUpdateInput = Readonly<{
+  name: string;
+  locale: string;
+  timezone: string;
 }>;
 
 export async function getTenantSettingsForTenant(
@@ -38,7 +46,7 @@ export async function getTenantSettingsForTenant(
 export async function updateTenantSettingsForTenant(
   tx: TenantTransaction,
   context: TenantContext,
-  input: { name: string; locale: string; timezone: string },
+  input: TenantSettingsUpdateInput,
 ) {
   const [before] = await tx
     .select({

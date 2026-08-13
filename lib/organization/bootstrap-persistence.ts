@@ -1,3 +1,5 @@
+import "server-only";
+
 import { createHash, timingSafeEqual } from "node:crypto";
 import { hashPassword } from "better-auth/crypto";
 import { eq, sql } from "drizzle-orm";
@@ -30,14 +32,11 @@ function secretsMatch(presented: string, expected: string) {
   return timingSafeEqual(presentedDigest, expectedDigest);
 }
 
-function todayUtc() {
-  return new Date().toISOString().slice(0, 10);
-}
-
 export async function provisionFirstTenantInDatabase(
   database: Database,
   input: BootstrapInput,
   expectedBootstrapSecret: string,
+  effectiveDate: string,
 ) {
   if (!secretsMatch(input.bootstrapSecret, expectedBootstrapSecret)) {
     throw new ConflictError("The bootstrap secret is invalid.");
@@ -90,7 +89,7 @@ export async function provisionFirstTenantInDatabase(
     await tx.insert(tenantStatusPeriods).values({
       tenantId,
       status: "active",
-      validFrom: todayUtc(),
+      validFrom: effectiveDate,
       recordedBy: userId,
     });
     await tx.insert(tenantMemberships).values({
@@ -106,7 +105,7 @@ export async function provisionFirstTenantInDatabase(
       action: "tenant.provisioned",
       objectType: "tenant",
       objectId: tenantId,
-      effectiveDate: todayUtc(),
+      effectiveDate,
       reason: "Initial system bootstrap",
       after: {
         name: input.tenantName,

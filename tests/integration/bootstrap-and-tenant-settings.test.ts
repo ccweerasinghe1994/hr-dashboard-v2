@@ -11,10 +11,12 @@ import postgres from "postgres";
 import { ConflictError } from "@/data/errors";
 import * as schema from "@/db/schema";
 import { provisionFirstTenantInDatabase } from "@/lib/organization/bootstrap-persistence";
+import { captureError } from "../support/capture-error";
 import { testDatabaseEnvironment } from "../support/integration-environment";
 
 const { adminUrl, runtimeUrl } = testDatabaseEnvironment;
 const fixturePrefix = `issue-239-${crypto.randomUUID().slice(0, 8)}`;
+const effectiveDate = "2026-08-13";
 
 function bootstrapInput(label: string, secret = "valid-bootstrap-secret") {
   return {
@@ -27,15 +29,6 @@ function bootstrapInput(label: string, secret = "valid-bootstrap-secret") {
     locale: "en-US",
     timezone: "UTC",
   };
-}
-
-async function capturedError(operation: () => Promise<unknown>) {
-  try {
-    await operation();
-  } catch (error) {
-    return error;
-  }
-  return null;
 }
 
 describe("bootstrap and tenant settings transaction boundaries", () => {
@@ -203,7 +196,12 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
     const input = bootstrapInput("invalid-secret", "wrong-secret");
 
     await expect(
-      provisionFirstTenantInDatabase(runtime, input, "valid-bootstrap-secret"),
+      provisionFirstTenantInDatabase(
+        runtime,
+        input,
+        "valid-bootstrap-secret",
+        effectiveDate,
+      ),
     ).rejects.toBeInstanceOf(ConflictError);
 
     expect(await bootstrapState(input)).toEqual({
@@ -225,6 +223,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
       runtime,
       input,
       "valid-bootstrap-secret",
+      effectiveDate,
     );
 
     expect({
@@ -278,6 +277,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
       runtime,
       input,
       "valid-bootstrap-secret",
+      effectiveDate,
     );
 
     let repeatedError: unknown;
@@ -286,6 +286,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
         runtime,
         input,
         "valid-bootstrap-secret",
+        effectiveDate,
       );
     } catch (error) {
       repeatedError = error;
@@ -328,6 +329,7 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
           runtime,
           input,
           "valid-bootstrap-secret",
+          effectiveDate,
         ),
       ),
     );
@@ -385,11 +387,12 @@ describe("bootstrap and tenant settings transaction boundaries", () => {
 
     let mutationError: unknown;
     try {
-      mutationError = await capturedError(() =>
+      mutationError = await captureError(() =>
         provisionFirstTenantInDatabase(
           runtime,
           input,
           "valid-bootstrap-secret",
+          effectiveDate,
         ),
       );
     } finally {

@@ -11,6 +11,10 @@ import {
 
 export type { BootstrapInput };
 
+function todayUtc() {
+  return new Date().toISOString().slice(0, 10);
+}
+
 export async function isBootstrapAvailable() {
   const [state] = await db
     .select({ completed: systemState.bootstrapCompleted })
@@ -21,5 +25,10 @@ export async function isBootstrapAvailable() {
 }
 
 export async function provisionFirstTenant(input: BootstrapInput) {
-  return provisionFirstTenantInDatabase(db, input, bootstrapSecret());
+  return provisionFirstTenantInDatabase(
+    db,
+    input,
+    bootstrapSecret(),
+    todayUtc(),
+  );
 }

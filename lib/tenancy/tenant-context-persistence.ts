@@ -1,3 +1,5 @@
+import "server-only";
+
 import { and, eq, gt, isNull, lte, or, sql } from "drizzle-orm";
 import { AuthorizationError, TenantUnavailableError } from "@/data/errors";
 import type { Database } from "@/db/client";
@@ -24,13 +26,10 @@ export type AuthenticatedSession = Readonly<{
   }>;
 }>;
 
-function todayUtc() {
-  return new Date().toISOString().slice(0, 10);
-}
-
 export async function withTenantContextForSession<T>(
   database: Database,
   requestSession: AuthenticatedSession,
+  asOfDate: string,
   operation: (tx: TenantTransaction, context: TenantContext) => Promise<T>,
   requiredRole?: MembershipRole,
 ) {
@@ -52,7 +51,6 @@ export async function withTenantContextForSession<T>(
         ),
       );
 
-    const today = todayUtc();
     const activeMemberships = [] as typeof memberships;
     for (const candidate of memberships) {
       await tx.execute(
@@ -65,10 +63,10 @@ export async function withTenantContextForSession<T>(
           and(
             eq(tenantStatusPeriods.tenantId, candidate.tenantId),
             isNull(tenantStatusPeriods.supersededAt),
-            lte(tenantStatusPeriods.validFrom, today),
+            lte(tenantStatusPeriods.validFrom, asOfDate),
             or(
               isNull(tenantStatusPeriods.validTo),
-              gt(tenantStatusPeriods.validTo, today),
+              gt(tenantStatusPeriods.validTo, asOfDate),
             ),
           ),
         )

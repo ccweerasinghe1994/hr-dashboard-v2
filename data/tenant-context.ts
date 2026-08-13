@@ -42,6 +42,7 @@ export async function withTenantContext<T>(
   return withTenantContextForSession(
     db,
     requestSession,
+    todayUtc(),
     operation,
     requiredRole,
   );

@@ -14,10 +14,12 @@ import {
   updateTenantSettingsForTenant,
 } from "@/lib/organization/tenant-settings-persistence";
 import { withTenantContextForSession } from "@/lib/tenancy/tenant-context-persistence";
+import { captureError } from "../support/capture-error";
 import { testDatabaseEnvironment } from "../support/integration-environment";
 
 const { adminUrl, runtimeUrl } = testDatabaseEnvironment;
 const suffix = crypto.randomUUID().slice(0, 8);
+const asOfDate = "2026-08-13";
 const fixture = {
   ownerUserId: crypto.randomUUID(),
   ownerSessionId: crypto.randomUUID(),
@@ -35,15 +37,6 @@ function requestSession(userId: string, sessionId: string, tenantId: string) {
     user: { id: userId },
     session: { id: sessionId, currentTenantId: tenantId },
   };
-}
-
-async function capturedError(operation: () => Promise<unknown>) {
-  try {
-    await operation();
-  } catch (error) {
-    return error;
-  }
-  return null;
 }
 
 describe("tenant settings authorization and transaction boundaries", () => {
@@ -137,6 +130,9 @@ describe("tenant settings authorization and transaction boundaries", () => {
         default_locale = 'en-US',
         default_timezone = 'UTC'
       where id = ${fixture.ownerTenantId}`;
+      await sql`update tenant_membership set role = 'member', status = 'active'
+      where tenant_id = ${fixture.memberTenantId}
+        and user_id = ${fixture.memberUserId}`;
     });
   });
 
@@ -156,18 +152,20 @@ describe("tenant settings authorization and transaction boundaries", () => {
       fixture.memberTenantId,
     );
 
-    const readError = await capturedError(() =>
+    const readError = await captureError(() =>
       withTenantContextForSession(
         runtime,
         session,
+        asOfDate,
         getTenantSettingsForTenant,
         "owner",
       ),
     );
-    const writeError = await capturedError(() =>
+    const writeError = await captureError(() =>
       withTenantContextForSession(
         runtime,
         session,
+        asOfDate,
         (tx, context) =>
           updateTenantSettingsForTenant(tx, context, {
             name: "Unauthorized change",
@@ -198,6 +196,60 @@ describe("tenant settings authorization and transaction boundaries", () => {
     });
   });
 
+  test("tenant settings reject an owner with an inactive membership", async () => {
+    await admin`update tenant_membership set role = 'owner', status = 'inactive'
+    where tenant_id = ${fixture.memberTenantId}
+      and user_id = ${fixture.memberUserId}`;
+    const session = requestSession(
+      fixture.memberUserId,
+      fixture.memberSessionId,
+      fixture.memberTenantId,
+    );
+
+    const readError = await captureError(() =>
+      withTenantContextForSession(
+        runtime,
+        session,
+        asOfDate,
+        getTenantSettingsForTenant,
+        "owner",
+      ),
+    );
+    const writeError = await captureError(() =>
+      withTenantContextForSession(
+        runtime,
+        session,
+        asOfDate,
+        (tx, context) =>
+          updateTenantSettingsForTenant(tx, context, {
+            name: "Inactive membership change",
+            locale: "en-GB",
+            timezone: "Europe/London",
+          }),
+        "owner",
+      ),
+    );
+
+    const [state] = await admin<
+      { name: string; locale: string; timezone: string; auditEvents: number }[]
+    >`select
+      t.name,
+      t.default_locale as locale,
+      t.default_timezone as timezone,
+      (select count(*)::int from audit_event where tenant_id = t.id) as "auditEvents"
+    from tenant t where t.id = ${fixture.memberTenantId}`;
+    expect({ readError, writeError, state }).toEqual({
+      readError: expect.objectContaining({ name: "TenantUnavailableError" }),
+      writeError: expect.objectContaining({ name: "TenantUnavailableError" }),
+      state: {
+        name: "Member Tenant",
+        locale: "en-US",
+        timezone: "UTC",
+        auditEvents: 0,
+      },
+    });
+  });
+
   test("an inactive tenant cannot use interactive settings reads or writes", async () => {
     const session = requestSession(
       fixture.inactiveOwnerUserId,
@@ -205,18 +257,20 @@ describe("tenant settings authorization and transaction boundaries", () => {
       fixture.inactiveTenantId,
     );
 
-    const readError = await capturedError(() =>
+    const readError = await captureError(() =>
       withTenantContextForSession(
         runtime,
         session,
+        asOfDate,
         getTenantSettingsForTenant,
         "owner",
       ),
     );
-    const writeError = await capturedError(() =>
+    const writeError = await captureError(() =>
       withTenantContextForSession(
         runtime,
         session,
+        asOfDate,
         (tx, context) =>
           updateTenantSettingsForTenant(tx, context, {
             name: "Inactive change",
@@ -257,6 +311,7 @@ describe("tenant settings authorization and transaction boundaries", () => {
     const result = await withTenantContextForSession(
       runtime,
       session,
+      asOfDate,
       (tx, context) =>
         updateTenantSettingsForTenant(tx, context, {
           name: "Updated Owner Tenant",
@@ -341,10 +396,11 @@ describe("tenant settings authorization and transaction boundaries", () => {
 
     let mutationError: unknown;
     try {
-      mutationError = await capturedError(() =>
+      mutationError = await captureError(() =>
         withTenantContextForSession(
           runtime,
           session,
+          asOfDate,
           (tx, context) =>
             updateTenantSettingsForTenant(tx, context, {
               name: "Must roll back",
