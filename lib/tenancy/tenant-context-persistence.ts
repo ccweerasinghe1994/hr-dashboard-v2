@@ -1,11 +1,16 @@
 import "server-only";
 
-import { and, eq, gt, isNull, lte, or, sql } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { AuthorizationError, TenantUnavailableError } from "@/data/errors";
 import type { Database } from "@/db/client";
-import { sessions, tenantMemberships, tenantStatusPeriods } from "@/db/schema";
+import { sessions } from "@/db/schema";
+import {
+  type MembershipRole,
+  selectCurrentTenant,
+  type TenantSelectionMembership,
+} from "@/lib/security/tenant-selection";
 
-export type MembershipRole = "owner" | "member";
+export type { MembershipRole } from "@/lib/security/tenant-selection";
 
 export type TenantContext = Readonly<{
   tenantId: string;
@@ -26,6 +31,19 @@ export type AuthenticatedSession = Readonly<{
   }>;
 }>;
 
+function resolveTenantMemberships(tx: TenantTransaction, asOfDate: string) {
+  return tx.execute<TenantSelectionMembership>(
+    sql`
+      select
+        tenant_id as "tenantId",
+        role,
+        membership_status as "membershipStatus",
+        tenant_status as "tenantStatus"
+      from resolve_current_user_tenant_memberships(${asOfDate})
+    `,
+  );
+}
+
 export async function withTenantContextForSession<T>(
   database: Database,
   requestSession: AuthenticatedSession,
@@ -38,54 +56,18 @@ export async function withTenantContextForSession<T>(
       sql`select set_config('app.current_user_id', ${requestSession.user.id}, true)`,
     );
 
-    const memberships = await tx
-      .select({
-        tenantId: tenantMemberships.tenantId,
-        role: tenantMemberships.role,
-      })
-      .from(tenantMemberships)
-      .where(
-        and(
-          eq(tenantMemberships.userId, requestSession.user.id),
-          eq(tenantMemberships.status, "active"),
-        ),
-      );
-
-    const activeMemberships = [] as typeof memberships;
-    for (const candidate of memberships) {
-      await tx.execute(
-        sql`select set_config('app.current_tenant_id', ${candidate.tenantId}, true)`,
-      );
-      const [period] = await tx
-        .select({ status: tenantStatusPeriods.status })
-        .from(tenantStatusPeriods)
-        .where(
-          and(
-            eq(tenantStatusPeriods.tenantId, candidate.tenantId),
-            isNull(tenantStatusPeriods.supersededAt),
-            lte(tenantStatusPeriods.validFrom, asOfDate),
-            or(
-              isNull(tenantStatusPeriods.validTo),
-              gt(tenantStatusPeriods.validTo, asOfDate),
-            ),
-          ),
-        )
-        .limit(1);
-      if (period?.status === "active") activeMemberships.push(candidate);
-    }
-
+    const memberships = await resolveTenantMemberships(tx, asOfDate);
     const requestedTenantId = requestSession.session.currentTenantId;
-    const requestedMembership = requestedTenantId
-      ? activeMemberships.find((item) => item.tenantId === requestedTenantId)
-      : undefined;
-    const membership =
-      requestedMembership ??
-      (activeMemberships.length === 1 ? activeMemberships[0] : undefined);
-
-    if (!membership) throw new TenantUnavailableError();
-    if (requiredRole && membership.role !== requiredRole) {
+    const selection = selectCurrentTenant({
+      memberships,
+      requestedTenantId,
+      requiredRole,
+    });
+    if (!selection.ok && selection.reason === "insufficient-role") {
       throw new AuthorizationError();
     }
+    if (!selection.ok) throw new TenantUnavailableError();
+    const { membership } = selection;
 
     await tx.execute(
       sql`select set_config('app.current_tenant_id', ${membership.tenantId}, true)`,
@@ -104,5 +86,37 @@ export async function withTenantContextForSession<T>(
       sessionId: requestSession.session.id,
       role: membership.role,
     });
+  });
+}
+
+export async function switchCurrentTenantForSession(
+  database: Database,
+  requestSession: AuthenticatedSession,
+  asOfDate: string,
+  tenantId: string,
+) {
+  return database.transaction(async (tx) => {
+    await tx.execute(
+      sql`select set_config('app.current_user_id', ${requestSession.user.id}, true)`,
+    );
+
+    const memberships = await resolveTenantMemberships(tx, asOfDate);
+    const membership = memberships.find(
+      (candidate) => candidate.tenantId === tenantId,
+    );
+    if (!membership || membership.membershipStatus !== "active") {
+      throw new AuthorizationError();
+    }
+    if (membership.tenantStatus !== "active") {
+      throw new TenantUnavailableError("This organization is inactive.");
+    }
+
+    await tx.execute(
+      sql`select set_config('app.current_tenant_id', ${tenantId}, true)`,
+    );
+    await tx
+      .update(sessions)
+      .set({ currentTenantId: tenantId })
+      .where(eq(sessions.id, requestSession.session.id));
   });
 }

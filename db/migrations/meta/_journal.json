@@ -15,6 +15,13 @@
       "when": 1786267904614,
       "tag": "0001_pretty_zzzax",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1786587126223,
+      "tag": "0002_tenant_membership_resolution",
+      "breakpoints": true
     }
   ]
 }
