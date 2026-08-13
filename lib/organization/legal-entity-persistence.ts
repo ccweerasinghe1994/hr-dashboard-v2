@@ -290,6 +290,7 @@ export async function scheduleLegalEntityChangeForTenant(
     reason: input.reason,
     before: toLegalEntityAuditSnapshot(prior),
     after: toLegalEntityAuditSnapshot(after),
+    occurredAt: recordedAt,
   });
 }
 
@@ -362,5 +363,6 @@ export async function correctLegalEntityConfigurationForTenant(
     reason: input.reason,
     before: toLegalEntityAuditSnapshot(prior),
     after: toLegalEntityAuditSnapshot(after),
+    occurredAt: recordedAt,
   });
 }

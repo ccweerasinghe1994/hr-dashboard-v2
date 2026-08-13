@@ -338,6 +338,48 @@ describe("legal-entity effective-dated history", () => {
     });
     expect(correction.recordedAt).toEqual(correctionRecordedAt);
     expect(superseded.supersededAt).toEqual(correctionRecordedAt);
+
+    const events = await withTenantContext(fixture.tenantA, (tx) =>
+      tx
+        .select({
+          action: schema.auditEvents.action,
+          effectiveDate: schema.auditEvents.effectiveDate,
+          occurredAt: schema.auditEvents.occurredAt,
+        })
+        .from(schema.auditEvents)
+        .where(
+          and(
+            eq(schema.auditEvents.tenantId, fixture.tenantA),
+            eq(schema.auditEvents.objectId, entity.id),
+          ),
+        )
+        .orderBy(
+          asc(schema.auditEvents.effectiveDate),
+          asc(schema.auditEvents.action),
+        ),
+    );
+    expect(events).toEqual([
+      {
+        action: "legal_entity.created",
+        effectiveDate: "2025-01-01",
+        occurredAt: creationRecordedAt,
+      },
+      {
+        action: "legal_entity.configuration_changed",
+        effectiveDate: "2025-04-01",
+        occurredAt: backdatedChangeRecordedAt,
+      },
+      {
+        action: "legal_entity.configuration_corrected",
+        effectiveDate: "2025-04-01",
+        occurredAt: correctionRecordedAt,
+      },
+      {
+        action: "legal_entity.configuration_changed",
+        effectiveDate: "2025-07-01",
+        occurredAt: futureChangeRecordedAt,
+      },
+    ]);
   });
 
   test("applies tenant- and date-scoped name and identifier conflicts", async () => {
