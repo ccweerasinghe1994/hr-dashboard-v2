@@ -294,6 +294,83 @@ export async function scheduleLegalEntityChangeForTenant(
   });
 }
 
+export async function changeLegalEntityStatusForTenant(
+  tx: LegalEntityPersistenceTransaction,
+  context: LegalEntityTenantContext,
+  legalEntityId: string,
+  status: "active" | "inactive",
+  effectiveDate: string,
+  reason: string,
+  transactionClock: TransactionClock = () => new Date(),
+) {
+  await lockLegalEntityForTenant(tx, context, legalEntityId);
+  const prior = await findContainingLegalEntityConfiguration(
+    tx,
+    context,
+    legalEntityId,
+    effectiveDate,
+  );
+  if (!prior) throw new ConflictError("No configuration covers that date.");
+  if (prior.status === status) {
+    throw new ConflictError(`The legal entity is already ${status}.`);
+  }
+
+  const recordedAt = transactionClock();
+  await tx
+    .update(legalEntityConfigurations)
+    .set({ supersededAt: recordedAt, supersededBy: context.userId })
+    .where(
+      and(
+        eq(legalEntityConfigurations.tenantId, context.tenantId),
+        eq(legalEntityConfigurations.id, prior.id),
+        isNull(legalEntityConfigurations.supersededAt),
+      ),
+    );
+
+  if (prior.validFrom < effectiveDate) {
+    await tx.insert(legalEntityConfigurations).values({
+      ...prior,
+      id: crypto.randomUUID(),
+      validTo: effectiveDate,
+      recordedAt,
+      recordedBy: context.userId,
+      supersedesId: prior.id,
+      supersededAt: null,
+      supersededBy: null,
+      changeReason: `Interval closed: ${reason}`,
+    });
+  }
+
+  const [after] = await tx
+    .insert(legalEntityConfigurations)
+    .values({
+      ...prior,
+      id: crypto.randomUUID(),
+      status,
+      validFrom: effectiveDate,
+      recordedAt,
+      recordedBy: context.userId,
+      supersedesId: prior.id,
+      supersededAt: null,
+      supersededBy: null,
+      changeReason: reason,
+    })
+    .returning(legalEntityConfigurationSelection);
+  await tx.insert(auditEvents).values({
+    tenantId: context.tenantId,
+    actorUserId: context.userId,
+    source: "ui",
+    action: `legal_entity.${status === "active" ? "reactivated" : "deactivated"}`,
+    objectType: "legal_entity",
+    objectId: legalEntityId,
+    effectiveDate,
+    reason,
+    before: toLegalEntityAuditSnapshot(prior),
+    after: toLegalEntityAuditSnapshot(after),
+    occurredAt: recordedAt,
+  });
+}
+
 export async function correctLegalEntityConfigurationForTenant(
   tx: LegalEntityPersistenceTransaction,
   context: LegalEntityTenantContext,
