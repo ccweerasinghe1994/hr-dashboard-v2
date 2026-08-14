@@ -91,9 +91,21 @@ when it becomes inactive. Reactivation remains system-only.
 
 ```bash
 bun run test
+bun run test:e2e
 bun run lint
 bun run typecheck
 bun run build
+```
+
+`test:e2e` requires the test PostgreSQL service and creates a fresh database
+for each run. It migrates that database, builds the production application,
+starts the standalone production server, runs Chromium, and removes the
+database afterward:
+
+```bash
+docker compose -f docker-compose.test.yml up -d
+bunx playwright install chromium
+bun run test:e2e
 ```
 
 For a complete human verification of setup, authentication, organization
