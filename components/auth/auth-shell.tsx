@@ -24,7 +24,9 @@ export function AuthShell({
         </div>
         <Card>
           <CardHeader>
-            <CardTitle className="text-xl">{title}</CardTitle>
+            <CardTitle className="text-xl">
+              <h1>{title}</h1>
+            </CardTitle>
             <CardDescription>{description}</CardDescription>
           </CardHeader>
           <CardContent>{children}</CardContent>

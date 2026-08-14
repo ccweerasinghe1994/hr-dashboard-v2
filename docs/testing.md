@@ -1,9 +1,9 @@
 # Automated testing strategy
 
 This document defines the target automated testing architecture. The repository
-currently has explicit Bun unit and PostgreSQL integration commands in the
-layered layout below. The coverage gate and Playwright suite remain later
-implementation milestones, not current capabilities.
+has explicit Bun unit, PostgreSQL integration, and production-build Playwright
+commands in the layered layout below. The coverage gate remains a later
+implementation milestone.
 
 ## Test behavior at the boundary that owns it
 
@@ -42,18 +42,18 @@ The current commands are:
 bun test / test   Database-free Bun unit suite
 test:unit         Explicit alias for the database-free Bun unit suite
 test:integration  Bun integration suite; fails when test DB URLs are missing
+test:e2e          Chromium against a disposable database and production build
+test:all          Unit, integration, then E2E suites
 ```
 
 The default `bunfig.toml` limits Bun's test discovery to `tests/unit`.
 `test:integration` selects `bunfig.integration.toml` so database-backed tests
 must be requested explicitly.
 
-The planned package scripts for later milestones are:
+The planned package script for a later milestone is:
 
 ```text
-test:e2e          Playwright against the production build
 test:coverage     Unit coverage report and threshold gate
-test:all          Unit, integration, and E2E suites
 ```
 
 Local development uses `test:unit` for rapid feedback and calls the slower
